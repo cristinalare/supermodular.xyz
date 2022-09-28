@@ -1,0 +1,56 @@
+:root {
+  --color-dark: #041e42;
+  --color-blue: #5784F7;
+  --color-green: #3CDBC0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48.5%);
+}
+.hero-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 8.5rem));
+}
+
+.workmark {
+  font-weight: 900;
+  font-size: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .workmark {
+    font-size: 2.5rem;
+  }
+  .center {
+    max-height: 95vh;
+  }
+}
