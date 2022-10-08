@@ -27,28 +27,229 @@
   <meta name="msapplication-config" content="/icons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 	<!-- preloads -->
-	<link rel="preload" as="image" href="./images/super-modular-logo.svg">
-	<link rel="preload" as="image" href="./images/background.svg">
+	<link rel="preload" as="image" href="./images/bkg-lines.svg">
+  <link rel="preload" as="image" href="./images/img-sequence/0.png">
 	<!-- fonts & stylesheets -->
 	<link rel="stylesheet" type="text/css" href="./reset.css">
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="./style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800;900&display=swap" rel="stylesheet">
+  <script src="./imgSequence.js" defer></script>
 </head>
 
 <body>
-	<div class="hero">
-    <div class="center">
-      <img src="./images/background.svg" alt="super modular background logo" width="776" height="552" />
-      <div class="hero-logo">
-        <img src="./images/super-modular-logo.svg" alt="super modular logo" width="112" height="112" />
-      </div>
-      <div class="hero-content">
-        <h1 class="workmark">supermodular</h1>
-        <p>Coming Soon</p>
-      </div>
+  <header>
+    <div class="hoverEffects">
+      <lottie-player
+        src="./images/animated-logo-header.json"
+        style="width: 203px; height: 40px;"
+      ></lottie-player>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <div class="img-sequence-container hero-section">
+    <canvas id="hero" class="hero-img" width="329" height="329"></canvas>
+    <div class="hero-content">
+      <h1 class="gradient-text">Our purpose is to cultivate a more regenerative digital frontier</h1>
+      <button class="cta-btn">Stay up to date</button>
     </div>
   </div>
+
+  <!-- projects -->
+  <section class="projects">
+    <h2 class="gradient-text">projects</h2>
+    <div class="projects-container">
+      <a href="https://gitcoin.co/" target="_blank" class="project-container hover-container">
+        <div class="project-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
+            <g fill-rule="evenodd">
+              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
+              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
+              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
+              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
+            </g>
+            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
+          </svg>
+          <img class="project-logo" src="./images/gitcoin.svg" alt="gitcoin project" width="80" height="80" />
+        </div>
+        <h3 class="hover-gradient-text">Gitcoin</h3>
+      </a>
+
+      <a href="https://www.kernel.community/en/" target="_blank" class="project-container hover-container">
+        <div class="project-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
+            <g fill-rule="evenodd">
+              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
+              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
+              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
+              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
+            </g>
+            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
+          </svg>
+          <img class="project-logo" src="./images/kernel.svg" alt="kernel project" width="80" height="80" />
+        </div>
+        <h3 class="hover-gradient-text">Kernel</h3>
+      </a>
+
+      <a href="https://buidlbox.io/" target="_blank" class="project-container hover-container">
+        <div class="project-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
+            <g fill-rule="evenodd">
+              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
+              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
+              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
+              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
+            </g>
+            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
+          </svg>
+          <img class="project-logo" src="./images/buidlbox.svg" alt="Buidlbox project" width="80" height="80" />
+        </div>
+        <h3 class="hover-gradient-text">Buidlbox</h3>
+      </a>
+
+      <a href="https://greenpill.party/" target="_blank" class="project-container hover-container">
+        <div class="project-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
+            <g fill-rule="evenodd">
+              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
+              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
+              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
+              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
+            </g>
+            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
+          </svg>
+          <img class="project-logo" src="./images/greenpill.svg" alt="greenpill project" width="80" height="80" />
+        </div>
+        <h3 class="hover-gradient-text">GreenPill</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- roadmap -->
+  <section>
+    <h2 class="gradient-text">roadmap</h2>
+    <div class="roadmap-container">
+      <a href="https://pluriverse.wtf/" target="_blank" class="roadmap-card hover-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
+          <g fill-rule="evenodd">
+            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
+            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
+          </g>
+          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
+        </svg>
+        <h3 class="hover-gradient-text">Pluriverse</h3>
+      </a>
+
+      <div class="roadmap-card hover-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
+          <g fill-rule="evenodd">
+            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
+            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
+          </g>
+          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
+        </svg>
+        <h3 class="hover-gradient-text">SimpleGrants</h3>
+      </div>
+
+      <div class="roadmap-card hover-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
+          <g fill-rule="evenodd">
+            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
+            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
+          </g>
+          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
+        </svg>
+        <h3 class="hover-gradient-text">How to DAO Book</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <h2 class="gradient-text">get in touch</h2>
+    <div class="footer-container">
+      <a href="mailto:team@supermodular.xyz" class="footer-card hover-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" fill="none" xmlns:v="https://vecta.io/nano">
+          <path fill="url(#A)" d="M0 0h36.706v26H0z"/><path d="M18.353 17.588L0 0h36.706L18.353 17.588z" fill="#041e42"/>
+          <path class="mail-icon-top" d="M18.353 10.706L0 0h36.706L18.353 10.706z" fill="url(#B)"/>
+          <defs><linearGradient id="A" x1="33.379" y1="24.543" x2="10.36" y2="-5.042" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient><linearGradient id="B" x1="3.327" y1=".6" x2="9.009" y2="18.337" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient></defs>
+        </svg>
+        <h3 class="hover-gradient-text">team@supermodular.xyz</h3>
+      </a>
+
+      <a href="https://twitter.com/supermodularxyz" class="footer-card hover-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="26" fill="none" xmlns:v="https://vecta.io/nano">
+          <path class="twitter-icon" d="M32.28 3.068a13.41 13.41 0 0 1-3.804 1.041A6.7 6.7 0 0 0 31.401.467a13 13 0 0 1-4.217 1.597C25.982.79 24.26 0 22.358 0c-3.661 0-6.621 2.943-6.621 6.567a6.08 6.08 0 0 0 .179 1.507C10.407 7.805 5.527 5.186 2.261 1.202c-.574.969-.897 2.099-.897 3.302 0 2.279 1.166 4.288 2.943 5.473-1.095-.036-2.117-.341-2.997-.825v.072c0 3.194 2.279 5.832 5.311 6.442-.556.143-1.13.233-1.741.233-.431 0-.843-.054-1.256-.126.843 2.602 3.284 4.504 6.19 4.558a13.4 13.4 0 0 1-8.236 2.817c-.538 0-1.059-.036-1.579-.09C2.943 24.923 6.424 26 10.156 26 22.34 26 29.015 15.988 29.015 7.303c0-.287 0-.574-.018-.843 1.31-.915 2.422-2.081 3.302-3.409" fill="url(#A)"/>
+          <defs><linearGradient id="A" x1="29.371" y1="24.543" x2="5.802" y2="-2.111" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient></defs>
+        </svg>
+        <h3 class="hover-gradient-text">@supermodularxyz</h3>
+      </a>
+    </div>
+  </footer>
+
+  <div class="overlay hidden">
+    <div class="modal hidden" id="mc_embed_signup">
+      <form action="https://xyz.us18.list-manage.com/subscribe/post?u=440d93cdf1197d43be6f8a47d&amp;id=cf30f16609&amp;f_id=008323e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <h2 class="gradient-text">Stay up to date</h2>
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+            <span id="mce-EMAIL-HELPERTEXT" class="helper_text">Subscribe to updates from supermodular.xyz and buidlbox.io</span>
+          </div>
+          <div class="mc-field-group input-group">
+            <strong>Who are you? <span class="asterisk">*</span> </strong>
+            <ul>
+              <li>
+                  <input type="radio" value="1" name="group[214868]" id="mce-group[214868]-214868-0" checked>
+                  <label for="mce-group[214868]-214868-0">Buidler</label>
+              </li>
+              <li>
+                <input type="radio" value="2" name="group[214868]" id="mce-group[214868]-214868-1">
+                <label for="mce-group[214868]-214868-1">Organization</label>
+              </li>
+            </ul>
+            <span id="mce-group[214868]-HELPERTEXT" class="helper_text"></span>
+          </div>
+          <div class="mc-field-group input-group" style="display: none;">
+            <strong>Source </strong>
+            <ul>
+              <li>
+                <input type="radio" value="4" name="group[214892]" id="mce-group[214892]-214892-0">
+                <label for="mce-group[214892]-214892-0">buidlbox.io</label>
+              </li>
+              <li>
+                <input type="radio" value="8" name="group[214892]" id="mce-group[214892]-214892-1" checked>
+                <label for="mce-group[214892]-214892-1">supermodular.xyz</label>
+              </li>
+            </ul>
+            <span id="mce-group[214892]-HELPERTEXT" class="helper_text"></span>
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-MMERGE6">Ethereum wallet address </label>
+            <input type="text" value="" name="MMERGE6" class="" id="mce-MMERGE6">
+            <span id="mce-MMERGE6-HELPERTEXT" class="helper_text">Early buidler POAP</span>
+          </div>
+          <div hidden="true"><input type="hidden" name="tags" value="2182936"></div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_440d93cdf1197d43be6f8a47d_cf30f16609" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+      </form>
+    </div>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
