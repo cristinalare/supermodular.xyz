@@ -430,6 +430,7 @@ footer {
   }
   h2 {
     font-size: 2rem;
+    line-height: 2.2rem;
   }
   .hero-section {
     gap: 2rem;
@@ -443,5 +444,8 @@ footer {
   }
   .cta-btn {
     padding: 0.7rem 1.5rem;
+  }
+  #mc_embed_signup form {
+    margin: 1.5rem 2rem;
   }
 }
