@@ -89,11 +89,6 @@ header {
   padding: 2.5rem;
 }
 
-@media only screen and (min-width: 900px) {
-  header {
-    /* padding-bottom: 20vh; */
-  }
-}
 /* hero section */
 
 .hero-section {
@@ -161,6 +156,7 @@ header {
     gap: 1rem;
   }
 }
+
 /* projects section */
 
 .projects-container {
@@ -221,6 +217,19 @@ header {
   }
   .projects-container {
     gap: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .project-card svg {
+    width: 90px;
+  }
+  .project-logo {
+    width: 50px;
+  }
+  .projects-container {
+    gap: 2.8rem;
+    padding: 0;
   }
 }
 
@@ -400,5 +409,39 @@ footer {
   h1 {
     font-size: 2rem;
     line-height: 3rem;
+  }
+  h2 {
+    padding-bottom: 3.5rem;
+  }
+  section {
+    margin: 8rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body,
+  a,
+  h3 {
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .hero-section {
+    gap: 2rem;
+  }
+  .hero-img {
+    width: 210px;
+    height: 210px;
+  }
+  header {
+    padding: 1.5rem;
+  }
+  .cta-btn {
+    padding: 0.7rem 1.5rem;
   }
 }
