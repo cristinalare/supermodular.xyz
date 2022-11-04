@@ -57,7 +57,12 @@ h2 {
   line-height: 2.6rem;
   padding-bottom: 5rem;
 }
-
+h2.nopad {
+  padding-bottom: 2rem;
+}
+h2.sub {
+  font-size: 1.5rem;
+}
 h3,
 a {
   font-weight: 800;
