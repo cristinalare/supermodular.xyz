@@ -25,9 +25,10 @@ gsap.to(unis, {
   // duration: 1,
   scrollTrigger: {
     trigger: section,
+    fastScrollEnd: true,
     pin: true,
     start: -5,
-    scrub: true,
+    scrub: 0.3,
     end: "+=200%"
   },
   onUpdate: render
