@@ -25,9 +25,10 @@ gsap.to(unis, {
   // duration: 1,
   scrollTrigger: {
     trigger: section,
+    fastScrollEnd: true,
     pin: true,
     start: -5,
-    scrub: true,
+    scrub: 0.3,
     end: "+=200%"
   },
   onUpdate: render
@@ -39,3 +40,29 @@ function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[unis.frame], 0, 0, 329, 329); 
 }
+
+// projects transition
+const projects = gsap.utils.toArray('.project-card');
+projects.forEach(project => {
+  gsap.from(project, {
+    opacity: 0,
+    scale: 0.5,
+    duration: 1,
+    scrollTrigger: {
+      trigger: project,
+      toggleActions: 'restart none none reverse',
+    }
+  });
+});
+const projectsDescriptions = gsap.utils.toArray('.project-description');
+projectsDescriptions.forEach(description => {
+  gsap.from(description, {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    scrollTrigger: {
+      trigger: description,
+      toggleActions: 'restart none none reverse',
+    }
+  });
+});
