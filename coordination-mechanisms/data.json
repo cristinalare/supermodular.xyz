@@ -1,0 +1,188 @@
+[
+  {
+    "title": "Tithing",
+    "description": "This historically means donating a portion of your income to church, nonprofits, etc. It’s good and simple to execute. Bad at: no feedback. No enforcement. No checks and balances. There is a need to maintain a strong culture to make it work.",
+    "link": "",
+    "type": 0
+  },
+  {
+    "title": "Taxes",
+    "description": "It is like “forced” tithing. You are required to give a portion of your money to the government. Taxation is a form of theft. Power corrupts. Centralized entity gets to decide top down what to fund. Feedback loop is voting, which is slow. It’s currently the best form of funding public goods we have.",
+    "link": "",
+    "type": 0
+  },
+  {
+    "title": "Voting",
+    "description": "Of course there are different forms. It often involves majority rule and is considered a representative democracy. Another example: Consensus-based voting. Voting is often paired with taxes. \n\n Many powerful mechanisms exist for funding a public commons that can help develop markets around public goods to create value for the collective. \n\n What if there was a market for a clean river? This would allow different companies to compete in that new market. The collective can use supply and demand to give value to and reward value creation for society.",
+    "link": "",
+    "type": 0
+  },
+  {
+    "title": "Markets",
+    "description": "This can be thought of as the best for resource allocation but not for collective resource allocation. It is the money game and provides for customers only (those who can afford to buy into it). Failures: monopoly, public goods not well funded. It is currently only good for excludable goods. Distributive collective intelligence mechanism. Anything that there’s consumer demand for backed by buying pressure is able to produce those goods. And stimulates innovation.",
+    "link": "",
+    "type": 0
+  },
+  {
+    "title": "Conviction Voting",
+    "description": "This coordination tool mitigates plutocracy in a similar way as quadratic funding but with time. If you have more tokens, you have more voice, but even if you have a minority share, you can still pass a large proposal; it just takes more time for it to pass. It’s just like voting with proposals, but instead of having a time limit to voice your choice, all the proposals compete against each other, and you allocate your tokens in various ways to your preferences. It comes from Micahel Zargham and others and was implemented by 1Hive. It works really well if there are a lot of proposals competing and a clear budget of how much the community wants to allocate in a given time. \n\n Tokens get staked behind a proposal and can be removed or reallocated at any time. Proposals gain voting power the longer the tokens remain staked behind the proposal, and once the proposal meets its threshold, the proposal passes. Proposals asking less money have a lower threshold. Bad: need a lot of proposals to compete, otherwise it’s too easy to pass a proposal. Good: minority opinions can actually pass proposals.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1388s",
+    "type": 1
+  },
+  {
+    "title": "Effective Altruism",
+    "description": "Less popular in the wake of SBF and FTX, effective altruism is based on the theory that we don’t actually give to have an impact; we give to feel better about ourselves. As a philosophy, what if we categorize causes by which were creating the most good on a utilitarian basis? Let’s take an analytical approach: if I give $5, I can get 5 mosquito nets, saving more lives than any other possible use of those funds. What if we could rank our causes and only give our money to the most effective? It’s interesting when paired with giving what you can pledge. Con: it only gives to things that have impact today. It only works well at scale. Con: earn-to-give got a damaged reputation after SBF manipulated the idea. Just give along the way as you’re earning. \n\n Challenge: Analyzing impact data is hard. Impact is by nature qualitative, and we’re trying to quantify it. How do you value a sunset vs. oatmeal? It’s all a money-vector. Ethical dilemmas: why our capital goes to the things it does. So it’s difficult to collapse all the various subjective value vectors into one vector, money.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2382s",
+    "type": 1
+  },
+  {
+    "title": "Retroactive Public Goods Funding",
+    "description": "Karl Floersch is an inspiration for this mechanism, as they are implementing it at Optimism. It is a way of doing public goods funding retroactively. At Optimism, they are creating a committee of experts, and they’re channeling revenue from the Optimism network and asking that committee of experts which things in the past have delivered value to the ecosystem. The idea is that more talent will be directed toward developing public goods funding in the present based on the assurance that they will be rewarded for it in the future.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1680s",
+    "type": 1
+  },
+  {
+    "title": "Quadratic Funding",
+    "description": "Created by Glen Wyel at Microsoft and Vitalik Buterin founder of Ethereum, with this mechanism you have a crowdfunding campaign that is allocated dollars from a central matching pool based on which projects are more democratically supported as opposed to those into which more capital goes. It is in opposition to 1:1 as that is plutocratic and based only on capital needs. It is instead based on the number of contributors as opposed to the amount funded, reducing whale power and favoring democratic. \n\n Example: You raise a grant that gets $100 from 100 contributors, and I raise a grant that gets $100 from 1 contributor, despite both grants being donated $100, you will get 99% of the matching pool. It’s a cool mechanism because it is a collective intelligence mechanism that routes money to where the “poor and the many” have an advantage over the rich and the few. \n\n You may give “only” a dollar, but really you are part of building an aggregate signal of what public goods folks want to see funded. Problems: sybil attacks, needing to raise matching pool funds. \n\n It’s like voting! Mitigating a plutocratic methodology with a one person: one vote identity style.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1220s",
+    "type": 2
+  },
+  {
+    "title": "Network Goods",
+    "description": "Private goods are rivalrous. Take for example an iPhone: you have to be able to afford it to have it. Public goods are nonrivalrous. Take for example breathing the air: everyone has access to the air regardless of their finances. Network goods get more valuable the more people consume them like open-source software. NFTs fall here. The more attention is given to NFT art, the more value is attributed to it. Inverts scarcity based models by increasing its value the more it is shared. \n\n Lots of love going on in this interlude about different regen orgs supporting each other!",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2228s",
+    "type": 2
+  },
+  {
+    "title": "Hypercerts",
+    "description": "Owocki is working on this mechanism with Protocol Labs. Carbon credits have market value; Hypercerts can generalize the magic of carbon credits into any impact vector. For example, I fix some potholes or pick up x-amount trash, etc. Any impact DAO could issue Hypercerts when their members have positive impact, and then bootstrap a marketplace of impact evaluators and get people who want to collect Hypercerts to show their virtue. Web2 = virtue-signaling. Web3 = proof-of-virtue. \n\n So we’re bootstrapping a triple-sided marketplace, where impact DAOs can issue Hypercerts, impact evaluators can stamp their legitimacy, and people who care can purchase them. Sum value is that any impact DAO can go from worrying about how much impact they can capture to how much they can create. That systematically shifts the incentives towards impact DAOs to having a business model, which means more capital and talent can rotate into impact DAOs. If you can create a decentralized signal generation collective intelligence marketplace, where people are issuing, evaluating and purchasing Hypercerts, you can have a decentralized data source about the impact. \n\n Challenge: why haven’t they worked in the past? Impact markets aren’t new. Owocki thinks the decentralized, blockchain aspect will make it reliable and successful. Bootstrapping the buy pressure will be the hardest part. We need to use social and cultural power to collect these things, then they’ll be successful. The dream is to create a market around it.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2680s",
+    "type": 2
+  },
+  {
+    "title": "Augmented Bonding Curve",
+    "description": "A bonding curve is a smart contract that mints tokens when money is sent to it and burns tokens to release collateral, and the price of the token goes up with every mint and down with every burn. It solves liquidity issues and price discovery issues for low liquidity markets. You can use them to start up small marketplaces because it’s a single-sided market. Griff declares, bonding curves will win a Nobel Prize as the first single-sided public market! Normally, you need the asset to be sold in order to be bought, but with tokens on a bonding curve, if you want to sell a token on a bonding curve, no one has to buy it. You just send it to the bonding curve, and the bonding curve destroys the token and releases the collateral. \n\n The augmented bonding curve (ABC) adds fees on mint and burn, so when money is sent to the ABC to mint tokens, some of the money goes to a pot of funds that is governed by token holders, and the rest is used to mint tokens. If someone burns a token by sending it to the ABC, some of the money that is released goes to the collective. It’s a continuous market-based funding stream, and as long as there is buying and selling, you’ll have volatility that will lead to public goods funding. \n\n The ABC also adds a “Hatch” in its initialization, where funds are collected before the launch of the bonding curve and some of the funds are used to mint tokens at the same price for all participants, and some of the money goes to the collective. \n\n There is a lot of promise in integrating bonding curves. This is a mechanism that really can push up the price as seen in the example of Moonshop Bot NFTs.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2940s",
+    "type": 2
+  },
+  {
+    "title": "Dominant Assurance Contracts",
+    "description": "Assurance contracts are a way of saying, “I want to fund this project but only if others do.” If the fundraiser does not reach the threshold within x weeks, all money will be returned. Kickstarter is famous for this model. \n\n Dominant assurance contracts take it a step further: if the contract reaches its goal, the largest funder will get their money back. If it doesn’t reach its goal, the dominant funder’s money will be distributed to the rest of the contributors. The stakeholder is incentivized to organize the whole thing motivated by profit but also of course the project passing and doing good. This model stems from Alex Trabarrok’s development of the concept. \n\n Side convo: Gitcoin used to be focused on delivering the subscription model to web3 with EIP1337, but pivoted to quadratic funding. Great pivot for Gitcoin, and the world.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3237s",
+    "type": 2
+  },
+  {
+    "title": "Donation Mining",
+    "description": "The readers of this blog are likley familiar with “Donation Mining,” as it is a cornerstone of the GIVeconomy. GIVbacks rewards donors to verified impact projects: every 2 weeks, Giveth gives up to 1 million GIV back to donors on Giveth.io. \n\n Recently Giveth launched GIVpower, which is similar to veCRV & veBAL, where stakers lock their tokens and then can influence which pools get liquidity mining rewards. With GIVpower, GIV holders stake and lock their GIV to influence which projects get more GIVbacks for their donors and how projects are ranked on Giveth.io.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3556s",
+    "type": 2
+  },
+  {
+    "title": "Pairwise (formerly Budget Box)",
+    "description": "This tool came from the Colony ecosystem (2018). Pairwise assessment is where 2 options appear on the screen, and you choose the one you prefer; at the end you have an ordered list based on your preferences. It’s almost like a dating app with an easy UX voting methodology but for on-chain voting. Your ranking can be aggregated with other people’s rankings and you can end up with an ordered list, a top choice or a weighted list that can be used to distribute a budget. Either way it is a fun way to collect qualitative assessments from a community (“I like this one! I like that one!”). \n\n Aside #1. Collaborative filtering: it pairs you with other users with similar preferences. With a data set at scale and collective intelligence, once you have a sufficient amount of data on the profiles of the users, you can use collaborative filtering and assess what they might like for other choices without making all kinds of complicated choices. \n\n Aside #2. Voting at its core should be signal aggregation. How great would it be to have a personal server running your own personal AI bot that you could train to vote for you by sending it all of your online content and maybe even personal DMs.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3726s",
+    "type": 2
+  },
+  {
+    "title": "Futurarchy",
+    "description": "Created by Robin Hanson, futurarchy is a mechanism for betting that the future will end up in a certain way. You declare that a particular proposal will have an impact, and you get rewarded if it does. It includes the impact of the proposal on whatever is being voted on. It brings voters into the prediction market. It enables using markets to sort through which policies are going to create the metric for national well-being. It leverages the power of markets, but the danger is that once a measure becomes a target it ceases to be a good metric.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3992s",
+    "type": 2
+  },
+  {
+    "title": "Stigmergy",
+    "description": "Stigmergy is a mechanism of indirect coordination, through the environment, between agents or actions. The principle is that the trace left in the environment by an individual action stimulates the performance of a succeeding action by the same or different agent. This is how ants coordinate for example. They leave stigmergic trails that lead ants to their goals. \n\n This is an attribute of other coordination mechanisms but not necessarily a mechanism itself. If you can create a web of trust, you can promote credibility. When people would share their cart after donating on Gitcoin, that was a stigmergic action, inspiring others to donate.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=4150s",
+    "type": 2
+  },
+  {
+    "title": "Praise",
+    "description": "A bottom-up, peer-to-peer collaborative reward/reputation system, Praise maintains a reward pot that is distributed by praises given to community members. The praises are automatically calculated and logged, and every two weeks, groups of quantifiers step up to score the value of each praise. Those quantifications result in tokens being rewarded that connect each token distribution to each praise. The motivation is gratitude, high vibes, positivity, and the like, while all this rich data remains that can be used to inspire, inform the community, and more. (Coordinape and Otterspace are something like this too.) Web of trust plus tokens! \n\n In regen web3, we are connecting financial capital to other types of capital such as social and cultural capital, but also making finance in the service of the social and cultural capital. Consider Gregory Landua and his theory of the 8 forms of capital.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=4260s",
+    "type": 2
+  },
+  {
+    "title": "Demurrage",
+    "description": "It is something like the opposite of inflation but to the same ends (money gets less valuable over time). In demurrage, if you have 1 unit of currency, and hold it, you will eventually have 0.99 units of currency. Demurrge-style money evaporates over time. \n\n Griff uses the example of the church script with demurrage that represented the degraded resources of flour and rice. Demurrage is originally derives from shipping, and it means “to linger” (Old French) referring to the loss of time needed for goods to be offloaded from a ship. It is “liquidated damages”. While there are examples of relatively successful demurrage-style currencies, inflation results in a similar outcome with a user experience that is seemingly preferred, despite the mechanism being less natural and authentic (inflation debases the unit of currency indirectly by making 1 unit just worth less relative to other goods over time).",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=4640s",
+    "type": 2
+  },
+  {
+    "title": "Proposal Inverter",
+    "description": "A proposal has a funding goal: you can make a proposal, and multiple funders or DAOs can fund it. For example, a proposal might solve problems for numerous DAOs, and so they can all fund it together. The funding then is collected and distributed in milestones.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=4813s",
+    "type": 2
+  },
+  {
+    "title": "Prop House",
+    "description": "Nouns DAO created this funding mechanism. Communities hold funding rounds in their community houses. In these funding rounds, builders propose ideas. Each round has a fixed amount of capital to be won by a set number of proposals. During the proposal period, builders propose ideas. Community token holders then vote, and top proposals get chosen to receive a set amount of funds.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=4915s",
+    "type": 2
+  },
+  {
+    "title": "Quadratic Voting",
+    "description": "Quadratic funding is a fork of quadratic voting. An alternative to one-human/one-vote voting, in which you can measure not only the preferences of a population but the strength of those preferences. You get a certain amount of vote credits and can vote on any number of issues. The voting power you can add to each issue is a square root of the vote credit that you stake behind each issue. Based on how many vote credits someone places on a particular issue, it is possible to see not only the voter’s preferences, but the strength of their preference for that issue. This avoids a plutocratic result, where loud voices sway the issue but rather that the broad consensus of the population is the group that sways the issue. It also incentivizes voting for a variety of issues as opposed to putting all your vote credits behind one issue. \n\n Tokenlog uses quadratic voting: it allows you to signal preference. It’s a fun game: you can have a louder voice the more diverse your preference is.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=5006s",
+    "type": 2
+  },
+  {
+    "title": "JokeRace",
+    "description": "Created by JokeDAO, this mechanism is a form of bottom-up, on-chain governance for communities to submit proposals and vote on them over a short period of time. It can be used for anything including curating a community roadmap and generating ideas or for endorsements, grants, contests, bounties, and so on. Different forms of voting may be possible including 1 token: 1 vote, vote decay over time and quadratic voting.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=5240s",
+    "type": 2
+  },
+  {
+    "title": "Holographic Consensus",
+    "description": "OG DAO technique that DAOStack put forth, holographic consensus is kind of a mix of futurarchy and regular DAO voting. Anyone can put up a proposal (very easily), and token holders can “bet” (vote) on that proposal, and when they do that, they are “boosting” the proposal up so it gets more attention and even speeds up the process to vote. If that proposal passes, then those who bet on it, will win tokens (Griff says “money”), and those who voted against, lose their stake. \n\n Owocki: This technique takes a holograph of low voter turnout and tries to get a representative turnout. This appears to compete with a delegation model. \n\n Griff: It saves the voters’ attention. Not everyone has time to give to all the proposals and votes. It works well when there are a lot of proposals and too much to pay attention to. It is designed for scalability. \n\n Holographic consensus favors scalability and simultaneously resilience, which are hard to get together. Absolute majority for a proposal is still favored (for resilience) but relative majority can occur under the conditions of “boosting”. Token holders can predict whether or not a proposal will pass in the DAO, thereby betting their tokens accordingly. This continues until either the boosting threshold is met or the boosting period ends. If a proposal reaches the threshold, it only requires a relative majority to pass, and those who’ve bet, gain or lose tokens accordingly. In this way, those who’ve staked act as a prediction market.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=5795s",
+    "type": 2
+  },
+  {
+    "title": "Skeuomorphism",
+    "description": "More of a categorization of mechanisms than a mechanism itself, skeuomorphism defines derivative design that in some form integrates former design cues that were previously necessary in the original. Owocki’s example is how Google and Yahoo! chose to build their products that organize information on the internet. Yahoo!’s version is skeuomorphic because they took a traditional model of library card cataloging system, and you would search for your interest as though you were moving from main topic to sub topic as you would search for something at the physical library via this taxonomy of information. Google innovated their approach by creating the simple search box that would scan the internet and provide results in a heretofore unseen way. \n\n “The earliest ideas for blockchain ledger technology are going to be just to port over existing methods and ideas. The best, most interesting mechanisms are going to be non-skeuomorphic.” — Kevin Owocki",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6025s",
+    "type": 2
+  },
+  {
+    "title": "Sortition",
+    "description": "Not used often in real life, jury duty being an exception, sortition involves taking a few people from a subset of possible voters and having them make the decision on their own. Somewhat like delegation but random from a larger pool, “everyday people”. Why isn’t it more common in blockchain? The jury is out!",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6295s",
+    "type": 2
+  },
+  {
+    "title": "Aqueduct",
+    "description": "If you’re building a pluralistic system for funding public goods, what would it look like to build bridges between mechanisms? Send an aqueduct from your DAO to another DAO, between modules of public goods funding. An aqueduct that goes between any other mechanisms in the ecosystem. Like Radicle Drips — you can program percentages of your revenue here and there according to your governance. It’s a recurring token stream. Set it and forget it. \n\n Owocki’s example is Gitcoin Grant 2’s new “aqueduct”: a project will allocate a percentage of its DAO-governed funds to stream to the Gitcoin Grant’s Matching Pool, which will run a quadratic funding round based on the project’s vesting schedule. \n\n High level primitive here is simply “money (token) streaming”.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6514s",
+    "type": 2
+  },
+  {
+    "title": "Ranked Choice Voting",
+    "description": "Instead of choosing one representative to vote for, you can instead submit an ordered list (1st choice, 2nd choice, etc.). Votes are actually counted in a way that allows seemingly minority candidates to get a chance and allows for the voters to signal their true preference instead of being strategic and voting for “the lesser of two evils”. Takes away third party spoiling the vote. Great for winner-take-all votes with a field of 4–8 candidates.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6878s",
+    "type": 2
+  },
+  {
+    "title": "Staking/Slashing",
+    "description": "Staking on Ethereum involves depositing 32 ETH thereby activating validator software and following protocol consensus rules in exchange for receiving a small issuance as interest. Your stake can be slashed, that is to say you lose your deposit, if you lie to the protocol or basically if you do anything that can cause a consensus fork. You can also be slashed by an inactivity leak or a small amount for going offline for a day or two. This system creates a crypto economic incentive because money is at stake and can be staked and slashed or increased at any time by the protocol. It’s a way of aligning capital with a certain set of outcomes. \n\n Gitcoin toyed with this concept for sorting their projects, and Giveth’s GIVpower is like this. You can stake and lock behind a project, and you will get GIVpower when you stake and lock, which gives you the power to curate projects. Putting skin in the game gives you some power to manage certain pieces of the project. \n\n Con: It requires capital and is in a sense plutocratic.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7123s",
+    "type": 2
+  },
+  {
+    "title": "Proof-of-Work",
+    "description": "The predecessor to proof-of-stake, proof-of-work still functions in Bitcoin (and unfortunately produces a lot of carbon emissions), and indeed it is used in a lot of projects to distribute resources beyond the high-energy Bitcoin network. The resource is issuance (“printing money”). Griff cites a couple examples such as CureCoin and FoldingCoin, which rewards issuance (tokens) for useful proof-of-work, folding proteins, in its efforts to find cures for cancer, Alzheimer’s, and other diseases. The people who fold more proteins get more issuance. It’s great in the digital space because it’s easy to be held accountable to the work that you are doing, but it can be great in the public goods space in a totally different way. Griff loves it as a notable example of something that was originally altruistic and using proof-of-work (work rewards in issuance) to turn it into something economic, what Owocki calls “effective altruism”. \n\n Let’s use some of these other mechanisms to create proof-of-work issuance. When DAO projects do work and then get funding, the funding comes from issuance from the DAO treasury, which is itself a form of proof-of-work issuance. In that way, issuance affects more than just the digital space using this system of public goods building blocks. \n\n There is a nice digression on the difference between issuance and inflation in this section. Bitcoin issues BTC every 10 minutes but still considers itself a deflationary currency. Issuance is the creation of a new currency from nothing, and inflation is the experience of a currency’s value trending downwards relative to other assets.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7383s",
+    "type": 2
+  },
+  {
+    "title": "Decentralized Identity",
+    "description": "We don’t want plutocratic digital identity, privacy steamrolling or to be leaking identities; we want sovereign digital identity (assuming it’s protected). One big opportunity is that we can build systems that don’t treat their participants as fungible with each other. We can build mechanisms that are one human one vote, which is inherently more democratic, or one token one vote, or anything in between (like quadratic voting). \n\n In order to build a more regenerative crypto economic internet, we need to be able to have positive sum games and repeat interactions with each other. With identity, we can accrue positive sum reputation and build virtuous cycles of trust-building, which increases the complexity of the design space of all these mechanisms, making it an order of magnitude larger to be able to drop markers of identity. Over time, we can identify where the positive sum games are being played, creating an economic gravity well that draws more people in. The cycle repeats itself until we have a crypto economic regenerative internet.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7619s",
+    "type": 2
+  },
+  {
+    "title": "Web3 Social",
+    "description": "This category encompasses all that can enable a more regenerative crypto economic world. Decentralized social media apps are great because of the sovereignty, the privacy and the fact that we can take our social graphs from site to site. Network effect needs to be built, and it will take time. Once we’ve got our attention moved away from web2 social, and we own our own social graph and can fork the interface, what innovation does that enable?",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7999s",
+    "type": 2
+  }
+]

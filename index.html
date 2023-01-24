@@ -35,9 +35,10 @@
 	<link rel="stylesheet" type="text/css" href="./reset.css">
   <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./global.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
   <script src="./animations.js" defer></script>
 </head>
 
@@ -49,6 +50,20 @@
         style="width: 203px; height: 40px;"
       ></lottie-player>
     </div>
+
+    <ul class="menu">
+      <li class="hover-container">
+        <a href="/coordination-mechanisms" class="hover-gradient-text">Coordination Mechanisms</a>
+      </li>
+      <li class="hover-container">
+        <a href="https://community.supermodular.xyz/" target="_blank" class="hover-gradient-text">Community</a>
+      </li>
+    </ul>
+
+    <svg class="menu-icon" role="img" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <title>menu icon</title>
+      <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </svg>
   </header>
 
   <!-- hero -->
@@ -204,7 +219,7 @@
   <footer>
     <h2 class="gradient-text">get in touch</h2>
     <div class="footer-container">
-      <a href="https://community.supermodular.xyz/" class="footer-card hover-container hoverEffects">
+      <!-- <a href="https://community.supermodular.xyz/" class="footer-card hover-container hoverEffects">
         <div>
           <lottie-player
             src="./images/super-modular-logo-animated.json"
@@ -212,8 +227,8 @@
           ></lottie-player>
         </div>
         <h3 class="hover-gradient-text">community forum</h3>
-        
-      </a>
+      </a> -->
+
       <a href="mailto:team@supermodular.xyz" class="footer-card hover-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" fill="none" xmlns:v="https://vecta.io/nano">
           <path fill="url(#A)" d="M0 0h36.706v26H0z"/><path d="M18.353 17.588L0 0h36.706L18.353 17.588z" fill="#041e42"/>
@@ -223,6 +238,16 @@
         <h3 class="hover-gradient-text">team@supermodular.xyz</h3>
       </a>
 
+      <a href="https://store.supermodular.xyz/" class="footer-card hover-container hoverEffects">
+        <div>
+          <lottie-player
+            src="./images/super-modular-logo-animated.json"
+            style="width: 36px; height: 35px;"
+          ></lottie-player>
+        </div>
+        <h3 class="hover-gradient-text">store</h3>
+      </a>
+
       <a href="https://twitter.com/supermodularxyz" class="footer-card hover-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="26" fill="none" xmlns:v="https://vecta.io/nano">
           <path class="twitter-icon" d="M32.28 3.068a13.41 13.41 0 0 1-3.804 1.041A6.7 6.7 0 0 0 31.401.467a13 13 0 0 1-4.217 1.597C25.982.79 24.26 0 22.358 0c-3.661 0-6.621 2.943-6.621 6.567a6.08 6.08 0 0 0 .179 1.507C10.407 7.805 5.527 5.186 2.261 1.202c-.574.969-.897 2.099-.897 3.302 0 2.279 1.166 4.288 2.943 5.473-1.095-.036-2.117-.341-2.997-.825v.072c0 3.194 2.279 5.832 5.311 6.442-.556.143-1.13.233-1.741.233-.431 0-.843-.054-1.256-.126.843 2.602 3.284 4.504 6.19 4.558a13.4 13.4 0 0 1-8.236 2.817c-.538 0-1.059-.036-1.579-.09C2.943 24.923 6.424 26 10.156 26 22.34 26 29.015 15.988 29.015 7.303c0-.287 0-.574-.018-.843 1.31-.915 2.422-2.081 3.302-3.409" fill="url(#A)"/>
@@ -230,6 +255,7 @@
         </svg>
         <h3 class="hover-gradient-text">@supermodularxyz</h3>
       </a>
+
     </div>
   </footer>
 
@@ -290,5 +316,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
   <script src="./script.js"></script>
+  <script src="./lottieHover.js"></script>
 </body>
 </html>
