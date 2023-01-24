@@ -374,7 +374,7 @@ canvas {
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   align-items: center;
   z-index: 1;

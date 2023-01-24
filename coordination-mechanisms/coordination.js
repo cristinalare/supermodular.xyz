@@ -181,6 +181,7 @@ function main() {
     if (!element.link) {
       mechanismBoxMore.style.display = 'none';
     } else {
+      mechanismBoxMore.style.display = 'block';
       mechanismBoxLink.addEventListener('mousedown', (e) => {
         startClick = new Date();
       });
