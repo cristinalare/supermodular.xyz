@@ -25,6 +25,18 @@ header {
 .menu a {
   font-weight: 300;
   font-size: 1.2rem;
+
+h2.nopad {
+  padding-bottom: 2rem;
+}
+h2.sub {
+  font-size: 1.5rem;
+}
+h3,
+a {
+  font-weight: 800;
+  font-size: 1.5rem;
+
 }
 
 .menu-icon {
