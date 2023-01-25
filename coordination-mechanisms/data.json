@@ -24,6 +24,12 @@
     "type": 0
   },
   {
+    "title": "Sortition",
+    "description": "Not used often in real life, jury duty being an exception, sortition involves taking a few people from a subset of possible voters and having them make the decision on their own. Somewhat like delegation but random from a larger pool, “everyday people”. Why isn’t it more common in blockchain? The jury is out!",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6295s",
+    "type": 0
+  },
+  {
     "title": "Conviction Voting",
     "description": "This coordination tool mitigates plutocracy in a similar way as quadratic funding but with time. If you have more tokens, you have more voice, but even if you have a minority share, you can still pass a large proposal; it just takes more time for it to pass. It’s just like voting with proposals, but instead of having a time limit to voice your choice, all the proposals compete against each other, and you allocate your tokens in various ways to your preferences. It comes from Micahel Zargham and others and was implemented by 1Hive. It works really well if there are a lot of proposals competing and a clear budget of how much the community wants to allocate in a given time. \n\n Tokens get staked behind a proposal and can be removed or reallocated at any time. Proposals gain voting power the longer the tokens remain staked behind the proposal, and once the proposal meets its threshold, the proposal passes. Proposals asking less money have a lower threshold. Bad: need a lot of proposals to compete, otherwise it’s too easy to pass a proposal. Good: minority opinions can actually pass proposals.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1388s",
@@ -36,21 +42,33 @@
     "type": 1
   },
   {
-    "title": "Retroactive Public Goods Funding",
-    "description": "Karl Floersch is an inspiration for this mechanism, as they are implementing it at Optimism. It is a way of doing public goods funding retroactively. At Optimism, they are creating a committee of experts, and they’re channeling revenue from the Optimism network and asking that committee of experts which things in the past have delivered value to the ecosystem. The idea is that more talent will be directed toward developing public goods funding in the present based on the assurance that they will be rewarded for it in the future.",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1680s",
+    "title": "Futurarchy",
+    "description": "Created by Robin Hanson, futurarchy is a mechanism for betting that the future will end up in a certain way. You declare that a particular proposal will have an impact, and you get rewarded if it does. It includes the impact of the proposal on whatever is being voted on. It brings voters into the prediction market. It enables using markets to sort through which policies are going to create the metric for national well-being. It leverages the power of markets, but the danger is that once a measure becomes a target it ceases to be a good metric.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3992s",
     "type": 1
   },
   {
-    "title": "Quadratic Funding",
-    "description": "Created by Glen Wyel at Microsoft and Vitalik Buterin founder of Ethereum, with this mechanism you have a crowdfunding campaign that is allocated dollars from a central matching pool based on which projects are more democratically supported as opposed to those into which more capital goes. It is in opposition to 1:1 as that is plutocratic and based only on capital needs. It is instead based on the number of contributors as opposed to the amount funded, reducing whale power and favoring democratic. \n\n Example: You raise a grant that gets $100 from 100 contributors, and I raise a grant that gets $100 from 1 contributor, despite both grants being donated $100, you will get 99% of the matching pool. It’s a cool mechanism because it is a collective intelligence mechanism that routes money to where the “poor and the many” have an advantage over the rich and the few. \n\n You may give “only” a dollar, but really you are part of building an aggregate signal of what public goods folks want to see funded. Problems: sybil attacks, needing to raise matching pool funds. \n\n It’s like voting! Mitigating a plutocratic methodology with a one person: one vote identity style.",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1220s",
-    "type": 2
+    "title": "Ranked Choice Voting",
+    "description": "Instead of choosing one representative to vote for, you can instead submit an ordered list (1st choice, 2nd choice, etc.). Votes are actually counted in a way that allows seemingly minority candidates to get a chance and allows for the voters to signal their true preference instead of being strategic and voting for “the lesser of two evils”. Takes away third party spoiling the vote. Great for winner-take-all votes with a field of 4–8 candidates.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6878s",
+    "type": 1
   },
   {
     "title": "Network Goods",
     "description": "Private goods are rivalrous. Take for example an iPhone: you have to be able to afford it to have it. Public goods are nonrivalrous. Take for example breathing the air: everyone has access to the air regardless of their finances. Network goods get more valuable the more people consume them like open-source software. NFTs fall here. The more attention is given to NFT art, the more value is attributed to it. Inverts scarcity based models by increasing its value the more it is shared. \n\n Lots of love going on in this interlude about different regen orgs supporting each other!",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2228s",
+    "type": 1
+  },
+  {
+    "title": "Retroactive Public Goods Funding",
+    "description": "Karl Floersch is an inspiration for this mechanism, as they are implementing it at Optimism. It is a way of doing public goods funding retroactively. At Optimism, they are creating a committee of experts, and they’re channeling revenue from the Optimism network and asking that committee of experts which things in the past have delivered value to the ecosystem. The idea is that more talent will be directed toward developing public goods funding in the present based on the assurance that they will be rewarded for it in the future.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1680s",
+    "type": 2
+  },
+  {
+    "title": "Quadratic Funding",
+    "description": "Created by Glen Wyel at Microsoft and Vitalik Buterin founder of Ethereum, with this mechanism you have a crowdfunding campaign that is allocated dollars from a central matching pool based on which projects are more democratically supported as opposed to those into which more capital goes. It is in opposition to 1:1 as that is plutocratic and based only on capital needs. It is instead based on the number of contributors as opposed to the amount funded, reducing whale power and favoring democratic. \n\n Example: You raise a grant that gets $100 from 100 contributors, and I raise a grant that gets $100 from 1 contributor, despite both grants being donated $100, you will get 99% of the matching pool. It’s a cool mechanism because it is a collective intelligence mechanism that routes money to where the “poor and the many” have an advantage over the rich and the few. \n\n You may give “only” a dollar, but really you are part of building an aggregate signal of what public goods folks want to see funded. Problems: sybil attacks, needing to raise matching pool funds. \n\n It’s like voting! Mitigating a plutocratic methodology with a one person: one vote identity style.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1220s",
     "type": 2
   },
   {
@@ -81,12 +99,6 @@
     "title": "Pairwise (formerly Budget Box)",
     "description": "This tool came from the Colony ecosystem (2018). Pairwise assessment is where 2 options appear on the screen, and you choose the one you prefer; at the end you have an ordered list based on your preferences. It’s almost like a dating app with an easy UX voting methodology but for on-chain voting. Your ranking can be aggregated with other people’s rankings and you can end up with an ordered list, a top choice or a weighted list that can be used to distribute a budget. Either way it is a fun way to collect qualitative assessments from a community (“I like this one! I like that one!”). \n\n Aside #1. Collaborative filtering: it pairs you with other users with similar preferences. With a data set at scale and collective intelligence, once you have a sufficient amount of data on the profiles of the users, you can use collaborative filtering and assess what they might like for other choices without making all kinds of complicated choices. \n\n Aside #2. Voting at its core should be signal aggregation. How great would it be to have a personal server running your own personal AI bot that you could train to vote for you by sending it all of your online content and maybe even personal DMs.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3726s",
-    "type": 2
-  },
-  {
-    "title": "Futurarchy",
-    "description": "Created by Robin Hanson, futurarchy is a mechanism for betting that the future will end up in a certain way. You declare that a particular proposal will have an impact, and you get rewarded if it does. It includes the impact of the proposal on whatever is being voted on. It brings voters into the prediction market. It enables using markets to sort through which policies are going to create the metric for national well-being. It leverages the power of markets, but the danger is that once a measure becomes a target it ceases to be a good metric.",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3992s",
     "type": 2
   },
   {
@@ -144,21 +156,9 @@
     "type": 2
   },
   {
-    "title": "Sortition",
-    "description": "Not used often in real life, jury duty being an exception, sortition involves taking a few people from a subset of possible voters and having them make the decision on their own. Somewhat like delegation but random from a larger pool, “everyday people”. Why isn’t it more common in blockchain? The jury is out!",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6295s",
-    "type": 2
-  },
-  {
     "title": "Aqueduct",
     "description": "If you’re building a pluralistic system for funding public goods, what would it look like to build bridges between mechanisms? Send an aqueduct from your DAO to another DAO, between modules of public goods funding. An aqueduct that goes between any other mechanisms in the ecosystem. Like Radicle Drips — you can program percentages of your revenue here and there according to your governance. It’s a recurring token stream. Set it and forget it. \n\n Owocki’s example is Gitcoin Grant 2’s new “aqueduct”: a project will allocate a percentage of its DAO-governed funds to stream to the Gitcoin Grant’s Matching Pool, which will run a quadratic funding round based on the project’s vesting schedule. \n\n High level primitive here is simply “money (token) streaming”.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6514s",
-    "type": 2
-  },
-  {
-    "title": "Ranked Choice Voting",
-    "description": "Instead of choosing one representative to vote for, you can instead submit an ordered list (1st choice, 2nd choice, etc.). Votes are actually counted in a way that allows seemingly minority candidates to get a chance and allows for the voters to signal their true preference instead of being strategic and voting for “the lesser of two evils”. Takes away third party spoiling the vote. Great for winner-take-all votes with a field of 4–8 candidates.",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=6878s",
     "type": 2
   },
   {

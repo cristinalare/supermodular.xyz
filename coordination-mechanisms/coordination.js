@@ -16,8 +16,34 @@ const mechanismBoxDescription = document.querySelector('.mechanism-box_descripti
 const mechanismBoxLink = document.querySelector('.mechanism-box_link');
 const mechanismBoxMore = document.querySelector('.mechanism-box_more');
 const mechanismBoxMesh = document.querySelector('.mechanism-box_mesh');
+let startClick, endClick, startClickPosition, endClickPosition;;
 
-let startClick, endClick;
+const introSection = document.querySelector('.intro');
+const loadingSection = document.querySelector('.loading');
+
+// helpers
+
+const handle3dClick = (element, fn) => {
+  element.addEventListener('mousedown', (e) => {
+    startClick = new Date();
+    startClickPosition = { x: e.clientX, y: e.clientY };
+  });
+  element.addEventListener('mouseup', (e) => {
+    endClick = new Date();
+    endClickPosition = { x: e.clientX, y: e.clientY };
+    const timeDiff = new Date(endClick - startClick).getMilliseconds();
+    const cursorDiff = {
+      x: Math.abs(endClickPosition.x - startClickPosition.x),
+      y: Math.abs(endClickPosition.y - startClickPosition.y),
+    };
+    const isClick = timeDiff < 300 && cursorDiff.x < 10 && cursorDiff.y < 10;
+    isClick && fn();
+  });
+};
+
+const getMechType = (type) => {
+  return type === 0 ? 'web1' : type === 1 ? 'web2' : 'web3'; 
+};
 
 const getBgSvg = (elementType) => {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -64,6 +90,7 @@ const getBgSvg = (elementType) => {
   }
   return svg;
 }
+// end helpers
 
 function main() {
   
@@ -73,10 +100,6 @@ function main() {
   renderer.setScissorTest(true);
 
   const sceneElements = [];
-
-  const getMechType = (type) => {
-    return type === 0 ? 'web1' : type === 1 ? 'web2' : 'web3'; 
-  };
 
   function addScene(elem, fn, size) {
     const ctx = document.createElement('canvas').getContext('2d');
@@ -103,11 +126,11 @@ function main() {
     }
 
     // old lights
-    const dirLight1 = new THREE.DirectionalLight( 0xffffff );
+    const dirLight1 = new THREE.DirectionalLight( 0xf23fff );
     dirLight1.position.set( 1, 1, 1 );
     scene.add( dirLight1 );
   
-    const dirLight2 = new THREE.DirectionalLight( 0xffffff );
+    const dirLight2 = new THREE.DirectionalLight( 0x3effff );
     dirLight2.position.set( - 1, - 1, - 1 );
     scene.add( dirLight2 );
   
@@ -127,18 +150,44 @@ function main() {
   }
 
   const initFunctionTemplate = (mechType, disabledScroll) => (elem) => {
+    // disabledScroll = true for hero + mechanisms list meshes
     const {scene, camera, controls} = makeScene(elem, disabledScroll);
     let mesh;
+    const randomX = Math.random() > 0.5 ? -1 : 1;
+    const randomY = Math.random() > 0.5 ? -1 : 1;
+    const randomZ = Math.random() > 0.5 ? -1 : 1;
+
     loader.load(`./assets/${mechType}.glb`, function(gltf) {
       mesh = gltf.scene;
+      mesh.traverse((o) => {
+        if (o.isMesh) {
+          const x = Math.random() * 0.8;
+          o.material.metalness = x;
+        }
+      });
       scene.add(gltf.scene);
       mesh.scale.set(0.2, 0.2, 0.2);
+
+      if (disabledScroll) {
+        introSection.style.display = 'flex';
+        loadingSection.style.display = 'none';
+        mechanismsContainer.style.display = 'flex';
+      }
+
+    }, function(progress) {
+      if (disabledScroll) {
+        introSection.style.display = 'none';
+        loadingSection.style.display = 'flex';
+        mechanismsContainer.style.display = 'none';
+      }
     });
+
     return (time, rect) => {
+      
       if (mesh) {
-        mesh.rotation.y = time * 0.3;
-        mesh.rotation.x = time * 0.02;
-        mesh.rotation.z = time * 0.09;
+        mesh.rotation.y = time * 0.3 * randomX;
+        mesh.rotation.x = time * 0.02 * randomY;
+        mesh.rotation.z = time * 0.09 * randomZ;
       }
       if (controls) {
         controls.handleResize();
@@ -166,6 +215,31 @@ function main() {
     const sceneRenderFunction = sceneInitFunction(meshHtmlElement);
     addScene(meshHtmlElement, sceneRenderFunction);
   };
+  
+  jsonData.forEach((element) => {
+    const mechContainer = document.createElement('div');
+    mechContainer.className = `mechanism-container hover-container ${getMechType(element.type)}`;
+    handle3dClick(mechContainer, () => openBox(element));
+
+    const meshContainer = document.createElement('div');
+    meshContainer.className = 'mesh-container';
+    const mesh = document.createElement('div');
+    mesh.className += 'small-mesh';
+    mesh.setAttribute('data-type', getMechType(element.type));
+    addMeshToScene(mesh, true);
+    
+    const bgSvg = getBgSvg(element.type);
+    meshContainer.appendChild(mesh);
+    meshContainer.appendChild(bgSvg);
+
+    const title = document.createElement('p');
+    title.textContent = element.title;
+    title.className = 'mechanism-title hover-gradient-text';
+
+    mechContainer.appendChild(meshContainer);
+    mechContainer.appendChild(title);
+    mechanismsContainer.appendChild(mechContainer);
+  });
 
   // modal
   const openBox = (element) => {
@@ -181,15 +255,9 @@ function main() {
     if (!element.link) {
       mechanismBoxMore.style.display = 'none';
     } else {
+      const link = element.link;
       mechanismBoxMore.style.display = 'block';
-      mechanismBoxLink.addEventListener('mousedown', (e) => {
-        startClick = new Date();
-      });
-      mechanismBoxLink.addEventListener('mouseup', (e) => {
-        endClick = new Date();
-        const diff = new Date(endClick - startClick).getMilliseconds();
-        diff < 300 && window.open(element.link, '_blank');
-      });
+      handle3dClick(mechanismBoxLink, () => window.open(link, '_blank'));
     }
 
     const prevCanvas = mechanismBoxMesh.firstChild;
@@ -206,7 +274,7 @@ function main() {
   }
  
   const closeBox = (e) => {
-    e.stopPropagation();
+    e && e.stopPropagation();
     mechanismBox.style.opacity = 0;
     
     setTimeout(() => {
@@ -218,59 +286,40 @@ function main() {
 
   overlay.addEventListener('click', closeBox);
   closeModalBtn.addEventListener('click', closeBox);
-  // end modal;
 
-// intro section
-
-const introBtn = document.querySelector('.intro-btn');
-introBtn.addEventListener('click', () => {
-  const y = window.innerHeight;
-  window.scrollTo(0, y);
-});
-
-const introMeshes = document.querySelectorAll('.intro_mesh');
-for (let i = 0; i < introMeshes.length; i++) {
-  const element = introMeshes[i];
-  element.setAttribute('data-type', getMechType(i));
-  addMeshToScene(element);
-};
-// end intro section
-
-  
-  jsonData.forEach((element) => {
-    const mechContainer = document.createElement('div');
-    mechContainer.className = 'mechanism-container hover-container';
-
-    mechContainer.addEventListener('mousedown', (e) => {
-      startClick = new Date();
-    });
-    mechContainer.addEventListener('mouseup', (e) => {
-      endClick = new Date();
-      const diff = new Date(endClick - startClick).getMilliseconds();
-      diff < 300 && openBox(element);
-    });
-
-    const meshContainer = document.createElement('div');
-    meshContainer.className = 'mesh-container';
-    const mesh = document.createElement('div');
-    mesh.className += 'small-mesh';
-    mesh.setAttribute('data-type', getMechType(element.type));
-    addMeshToScene(mesh, true);
-    // const bg = document.createElement('div');
-    // bg.className = 'mesh-background';
-    
-    const bgSvg = getBgSvg(element.type);
-    meshContainer.appendChild(mesh);
-    meshContainer.appendChild(bgSvg);
-
-    const title = document.createElement('p');
-    title.textContent = element.title;
-    title.className = 'mechanism-title hover-gradient-text';
-
-    mechContainer.appendChild(meshContainer);
-    mechContainer.appendChild(title);
-    mechanismsContainer.appendChild(mechContainer);
+  document.addEventListener('keyup', (e) => {
+    if(e.key === "Escape") {
+      closeBox();
+    }
   });
+
+  // intro section
+  const introBtn = document.querySelector('.intro-btn');
+  introBtn.addEventListener('click', () => {
+    const y = window.innerHeight;
+    window.scrollTo(0, y);
+  });
+
+  const introMeshes = document.querySelectorAll('.intro_mesh');
+  for (let i = 0; i < introMeshes.length; i++) {
+    const element = introMeshes[i];
+    element.setAttribute('data-type', getMechType(i));
+    addMeshToScene(element, true);
+  };
+
+  const firstWeb1 = document.querySelector('.web1');
+  const firstWeb2 = document.querySelector('.web2');
+  const firstWeb3 = document.querySelector('.web3');
+  const firstOfType = [firstWeb1, firstWeb2, firstWeb3];
+
+  const introMeshesContainers = document.querySelectorAll('.intro_mesh-container');
+  introMeshesContainers.forEach((mesh, index) => {
+    handle3dClick(mesh, () => {
+      const startY = firstOfType[index].getBoundingClientRect().top;
+      window.scrollTo(0, startY - 0.1 * window.innerHeight);
+    });
+  });
+  // end intro section
 
   function render(time) {
     time *= 0.001;
