@@ -28,7 +28,7 @@ const handle3dClick = (element, fn) => {
     startClick = new Date();
     startClickPosition = { x: e.clientX, y: e.clientY };
   });
-  element.addEventListener('mouseup', (e) => {
+  element.onmouseup = (e) => {
     endClick = new Date();
     endClickPosition = { x: e.clientX, y: e.clientY };
     const timeDiff = new Date(endClick - startClick).getMilliseconds();
@@ -38,7 +38,7 @@ const handle3dClick = (element, fn) => {
     };
     const isClick = timeDiff < 300 && cursorDiff.x < 10 && cursorDiff.y < 10;
     isClick && fn();
-  });
+  };
 };
 
 const getMechType = (type) => {
@@ -174,13 +174,11 @@ function main() {
         setTimeout(() => {
           loadingSection.style.display = 'none';
         }, 1500);
-        // introSection.style.display = 'flex';
         mechanismsContainer.style.display = 'flex';
       }
 
     }, function(progress) {
       if (disabledScroll) {
-        // introSection.style.display = 'none';
         loadingSection.style.display = 'flex';
         mechanismsContainer.style.display = 'none';
       }
