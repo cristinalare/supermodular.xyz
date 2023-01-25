@@ -1,0 +1,467 @@
+body {
+  box-sizing: border-box;
+  background: url('./assets/coord-bg.svg') #002E4B;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: top;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mech-gradient: linear-gradient(180deg, #F88989 0%, #699CFF 100%);
+  --modal-height: 75vh;
+  --modal-block-padding: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --modal-height: 85vh;
+  }
+}
+
+/* global file colors */
+:root {
+  --color-dark: #041e42;
+  --color-blue: #5784F7;
+  --color-green: #3CDBC0;
+  --gradient: linear-gradient(312.31deg, #08FFB8 30.49%, #5799F7 94.47%);
+  --gradient-reverted: linear-gradient(312.31deg, #5799F7 30.49%, #08FFB8 94.47%);
+  accent-color: var(--color-green);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.overlay ::-webkit-scrollbar {
+  width: 5px;
+}
+.overlay ::-webkit-scrollbar-track {
+  background: grey;
+  border-radius: 5px;
+}
+.overlay ::-webkit-scrollbar-thumb {
+  background: var(--gradient);
+  border-radius: 5px;
+}
+.overlay ::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* header */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  --webkit-backdrop-filter: blur(10px);
+  padding-block: 1.25rem 0.5rem;
+}
+
+.lottie-player {
+  width: 150px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .lottie-player {
+    width: 100px;
+    height: 20px;
+  }
+  header {
+    padding: 0.9rem 4% 0.3rem 4%;
+  }
+}
+
+/* loading section
+================== */
+
+.loading {
+  width: 100%;
+  height: 101vh;
+  background: #002E4B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+}
+
+/* intro section
+================ */
+
+.intro {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  position: relative;
+  padding: 3% 13%;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 1.2s ease-in 1.5s;
+}
+
+.intro h1 {
+  font-size: 5rem;
+  line-height: 106.52%;
+  padding-bottom: 1.25rem;
+  max-width: 10ch;
+  margin: 0 auto;
+}
+
+.intro h4 {
+  font-weight: 300;
+  line-height: 1.3;
+}
+ 
+.intro p {
+  line-height: 1.4;
+  max-width: 50ch;
+}
+
+.intro_meshes {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro_mesh-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.intro_mesh {
+  width: max(10em, 12vw);
+  height: max(10em, 12vw);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1050px) {
+  .intro_mesh-container:nth-child(2) {
+    padding-left: 3.5rem;
+  }
+  .intro_mesh-container:nth-child(3) {
+    padding-left: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) and (min-width: 677px) {
+  .intro_mesh-container:nth-child(2) {
+    padding-top: 3.5rem;
+  }
+  .intro_mesh-container:nth-child(3) {
+    padding-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 677px) {
+  .intro_mesh-container {
+    padding-right: 2rem;
+  }
+  .intro_mesh {
+    width: 7em;
+    height: 7em;
+  }
+  .intro h1 {
+    max-width: unset;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .intro_mesh {
+    width: 5em;
+    height: 5em;
+  }
+}
+
+.intro-btn {
+  position: absolute;
+  bottom: 2%;
+  margin: 0 auto;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  color: white;
+  height: 55px;
+  display: flex;
+  padding: 15px;
+}
+
+.intro-btn svg {
+  transition: all 0.3s ease-out;
+}
+.intro-btn:hover svg {
+  color: var(--color-green);
+  transform: translateY(8px);
+}
+
+@media only screen and (max-width: 1050px) {
+  .intro {
+    flex-direction: column;
+    gap: 5%;
+    padding: 2% 4%;
+  }
+  .intro h1 {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  .intro_meshes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+}
+@media only screen and (max-width: 720px) {
+  .intro {
+    gap: 2%;
+  }
+  .intro h1 {
+    font-size: 1.7rem;
+  }
+  .intro-btn {
+    bottom: 0%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .intro h1 {
+    font-size: 1.25rem;
+  }
+  .intro p {
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .intro p {
+    font-size: 0.9rem;
+  }
+}
+
+/* mechanisms section
+===================== */
+
+.mechanisms-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  row-gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 8%;
+  display: none;
+}
+
+.mechanism-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20ch;
+  flex-grow: 0;
+  flex-shrink: 0;
+  
+  margin: 0 auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+.mesh-container {
+  position: relative;
+}
+.mesh-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 55%;
+  min-height: 55%;
+  z-index: -1;
+}
+
+.mechanism-title,
+.mechanism-box_title {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 130%;
+  font-weight: 500;
+}
+
+/* mechanism 3d */
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.small-mesh {
+  width: max(10em, 10vw);
+  height: max(10em, 10vw);
+}
+
+@media only screen and (max-width: 1400px) {
+  .mechanism-title {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .mechanisms-container {
+    padding: 2rem 3%;
+    column-gap: 0.9rem;
+  }
+  .mechanism-container {
+    width: 13ch;
+  }
+  .mechanism-title {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mechanism-title {
+    font-size: 0.8rem;
+  }
+  .mechanisms-container {
+    padding-top: 0rem;
+  }
+}
+
+/* mechanism box modal */
+.mechanism-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--modal-height);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  z-index: 100;
+  display: flex;
+  gap: 10%;
+  padding: var(--modal-block-padding) 10%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+
+.large-mesh {
+  width: max(12em, 25vw);
+  height: max(12em, 25vw);
+}
+
+@media only screen and (min-width: 1100px) {
+  .mechanism-box > div {
+    flex: 1 0 0;
+  }
+}
+
+.mechanism-box_title {
+  padding-bottom: 1rem;
+}
+.mechanism-box_description {
+  max-height: calc(var(--modal-height) - 2 * var(--modal-block-padding) - 2.25rem);
+  padding-right: 1.7rem;
+  overflow-y: auto;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.mechanism-box_link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 1600px) {
+  body {
+    font-size: 1.4rem;
+  }
+  .mechanism-box_title {
+    font-size: 1.7rem;
+  }
+  .mechanism-box_description {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  :root {
+    --modal-block-padding: 1.5rem;
+  }
+  .large-mesh {
+    width: 10em;
+    height: 10em;
+  }
+  .mechanism-box {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .mechanism-box_description {
+    padding-right: 0.7rem;
+    /* + mesh height + row gap; 2.25 rem = mech title */
+    max-height: calc(var(--modal-height) - 2 * var(--modal-block-padding) - 10em - 1rem - 2.25rem - 1rem);
+  }
+  .mechanism-box_link {
+    gap: 0;
+  }
+  .mechanism-box_more {
+    transform: translateY(-1rem);
+  }
+}
+@media only screen and (max-width: 470px) {
+  .mechanism-box {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+/* modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  z-index: 1;
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-out;
+}
+.modal-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+  cursor: pointer;
+  color: white;
+  transition: color 0.4s ease-out;
+}
+.modal-close:hover {
+  color: var(--color-green);
+}

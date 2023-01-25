@@ -1,7 +1,16 @@
+// mobile menu
+
+const menuIcon = document.querySelector('.menu-icon');
+const menuList = document.querySelector('.menu');
+menuIcon.addEventListener('click', () => {
+  menuList.classList.toggle('open');
+});
+
 // modal
-const ctaBtn = document.querySelector(".cta-btn");
+const openModalBtn = document.querySelector(".cta-btn");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
+
 modal.addEventListener('click', modalClick);
 function modalClick(e) {
   e.stopPropagation();
@@ -27,21 +36,5 @@ const openModal = () => {
   }, 50);
 }
 
-ctaBtn.addEventListener("click", openModal);
+openModalBtn.addEventListener("click", openModal);
 overlay.addEventListener("click", closeModal);
-
-// lottie hover effect
-const playerContainers = document.querySelectorAll(".hoverEffects");
-  playerContainers.forEach(container => {
-    container.addEventListener("mouseover", () => {
-      const player = container.querySelector("lottie-player");
-      player.setDirection(1);
-      player.play();
-    });
-
-    container.addEventListener("mouseleave", () => {
-      const player = container.querySelector("lottie-player");
-      player.setDirection(-1);
-      player.play();
-    });
-  });
