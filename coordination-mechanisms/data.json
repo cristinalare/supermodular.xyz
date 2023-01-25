@@ -84,7 +84,7 @@
     "type": 2
   },
   {
-    "title": "Dominant Assurance Contracts",
+    "title": "Dominance Assurance Contracts",
     "description": "Assurance contracts are a way of saying, “I want to fund this project but only if others do.” If the fundraiser does not reach the threshold within x weeks, all money will be returned. Kickstarter is famous for this model. \n\n Dominant assurance contracts take it a step further: if the contract reaches its goal, the largest funder will get their money back. If it doesn’t reach its goal, the dominant funder’s money will be distributed to the rest of the contributors. The stakeholder is incentivized to organize the whole thing motivated by profit but also of course the project passing and doing good. This model stems from Alex Trabarrok’s development of the concept. \n\n Side convo: Gitcoin used to be focused on delivering the subscription model to web3 with EIP1337, but pivoted to quadratic funding. Great pivot for Gitcoin, and the world.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=3237s",
     "type": 2

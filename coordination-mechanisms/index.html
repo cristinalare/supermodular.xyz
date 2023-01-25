@@ -29,9 +29,9 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- fonts & stylesheets -->
-	  <link rel="stylesheet" type="text/css" href="/reset.css">
-    <link rel="stylesheet" type="text/css" href="/global.css">
-    <link type="text/css" rel="stylesheet" href="./coordination.css">
+	  <link rel="stylesheet" type="text/css" href="../reset.css">
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link type="text/css" rel="stylesheet" href="coordination.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
       <a href="/" class="hoverEffects">
         <lottie-player
           class="lottie-player"
-          src="/images/animated-logo-header.json"
+          src="../images/animated-logo-header.json"
         ></lottie-player>
       </a>
       <!-- <ul class="pages">
@@ -56,25 +56,33 @@
       </ul> -->
     </header>
   
-    <section class="loading">Loading..</section>
+    <section class="loading">
+      <lottie-player
+        src="./assets/loading.json"
+        background="transparent"
+        style="width: 270px; height: 270px"
+        loop
+        autoplay
+      ></lottie-player>
+    </section>
 
     <section class="intro">
       <div>
-        <h1 class="gradient-text">Coordination<br/>Mechanisms</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+        <h1 class="gradient-text">Coordination Mechanisms</h1>
+        <p>It's all coordination & it always has been. Now that we can program our values into our money, that will deepen our ability to coordinate at webscale.  So what do we build with it? Explore what's possible in the coordination mechanism design space below.</p>
       </div>
       <div class="intro_meshes">
         <div class="intro_mesh-container hover-container">
           <div class="intro_mesh"></div>
-          <h3 class="hover-gradient-text">Ancient</h3>
+          <h4 class="hover-gradient-text">Ancient Mechanisms</h4>
         </div>
         <div class="intro_mesh-container hover-container">
           <div class="intro_mesh"></div>
-          <h3 class="hover-gradient-text">Web2</h3>
+          <h4 class="hover-gradient-text">Web2 Mechanisms</h4>
         </div>
         <div class="intro_mesh-container hover-container">
           <div class="intro_mesh"></div>
-          <h3 class="hover-gradient-text">Web3</h3>
+          <h4 class="hover-gradient-text">Web3 Mechanisms</h4>
         </div>
       </div>
       <button class="intro-btn">
@@ -125,7 +133,7 @@
       }
     </script>
 
-    <script type="module" src="./coordination.js"></script>
+    <script type="module" src="coordination.js"></script>
 
 	</body>
 </html>

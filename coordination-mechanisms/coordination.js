@@ -169,14 +169,18 @@ function main() {
       mesh.scale.set(0.2, 0.2, 0.2);
 
       if (disabledScroll) {
-        introSection.style.display = 'flex';
-        loadingSection.style.display = 'none';
+        loadingSection.style.opacity = '0';
+        introSection.style.opacity = '1';
+        setTimeout(() => {
+          loadingSection.style.display = 'none';
+        }, 1500);
+        // introSection.style.display = 'flex';
         mechanismsContainer.style.display = 'flex';
       }
 
     }, function(progress) {
       if (disabledScroll) {
-        introSection.style.display = 'none';
+        // introSection.style.display = 'none';
         loadingSection.style.display = 'flex';
         mechanismsContainer.style.display = 'none';
       }
