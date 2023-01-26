@@ -95,15 +95,39 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   opacity: 1;
-  transition: opacity 1.5s ease-in;
+  transition: opacity 1s ease-in;
+}
+
+.progress-container {
+  height: 9px;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid white;
+  width: 200px;
+  position: relative;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+.progress-percent {
+  border-radius: inherit;
+  position: absolute;
+  background: var(--gradient);
+  width: 0;
+  transition: all 0.4s ease-out;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 /* intro section
 ================ */
 
 .intro {
-  height: 93vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +136,7 @@ header {
   padding: 3% 13%;
   box-sizing: border-box;
   opacity: 0;
-  transition: all 1.2s ease-in 1.5s;
+  transition: all 1s ease-in 1s;
 }
 
 .intro h1 {
@@ -120,7 +144,6 @@ header {
   line-height: 106.52%;
   padding-bottom: 1.25rem;
   max-width: 10ch;
-  margin: 0 auto;
 }
 
 .intro h4 {
@@ -166,6 +189,9 @@ header {
   .intro_mesh-container:nth-child(3) {
     padding-top: 1rem;
   }
+  .intro h1 {
+    max-width: unset;
+  }
 }
 
 @media only screen and (max-width: 677px) {
@@ -178,6 +204,8 @@ header {
   }
   .intro h1 {
     max-width: unset;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -217,7 +245,6 @@ header {
   }
   .intro h1 {
     font-size: 2.25rem;
-    text-align: center;
   }
   .intro_meshes {
     flex-direction: row;
@@ -234,7 +261,7 @@ header {
     font-size: 1.7rem;
   }
   .intro-btn {
-    bottom: 0%;
+    bottom: 2%;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -358,6 +385,7 @@ canvas {
   display: none;
   transition: all 0.4s ease-out;
   opacity: 0;
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .large-mesh {
@@ -445,7 +473,7 @@ canvas {
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   align-items: center;
   z-index: 1;
@@ -464,4 +492,40 @@ canvas {
 }
 .modal-close:hover {
   color: var(--color-green);
+}
+
+/* footer */
+
+footer {
+  box-sizing: border-box;
+  display: none;
+  max-width: min(60rem, 90vw);
+  padding:  3rem 5%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid var(--color-blue);
+}
+
+.footer-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer a {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.icon-top,
+.icon-bottom {
+  transition: all 0.4s ease-out;
+}
+.footer-card:hover .icon-top {
+  transform: translateY(22px);
+}
+.footer-card:hover .icon-bottom {
+  transform: translateY(-22px);
 }

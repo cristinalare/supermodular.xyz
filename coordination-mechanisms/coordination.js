@@ -4,8 +4,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'GLTFLoader';
 import { TrackballControls } from 'TrackballControls';
 
-import jsonData from './data.json' assert {type: 'json'};
-
 const mechanismsContainer = document.querySelector('.mechanisms-container');
 const overlay = document.querySelector('.overlay');
 const closeModalBtn = document.querySelector('.modal-close');
@@ -18,9 +16,11 @@ const mechanismBoxMore = document.querySelector('.mechanism-box_more');
 const mechanismBoxMesh = document.querySelector('.mechanism-box_mesh');
 let startClick, endClick, startClickPosition, endClickPosition;;
 
+const footerSection = document.querySelector('footer');
 const introSection = document.querySelector('.intro');
+const introMeshes = document.querySelectorAll('.intro_mesh');
 const loadingSection = document.querySelector('.loading');
-
+const minLoadedMeshes = introMeshes.length + 4;
 // helpers
 
 const handle3dClick = (element, fn) => {
@@ -90,12 +90,35 @@ const getBgSvg = (elementType) => {
   }
   return svg;
 }
+
+const handleIntroClicks = () => {
+  const firstWeb1 = document.querySelector('.web1');
+  const firstWeb2 = document.querySelector('.web2');
+  const firstWeb3 = document.querySelector('.web3');
+  const firstOfType = [firstWeb1, firstWeb2, firstWeb3];
+
+  const introMeshesContainers = document.querySelectorAll('.intro_mesh-container');
+  introMeshesContainers.forEach((mesh, index) => {
+    handle3dClick(mesh, () => {
+      const startY = firstOfType[index].getBoundingClientRect().top;
+      window.scrollTo(0, startY - 0.1 * window.innerHeight);
+    });
+  });
+}
 // end helpers
 
 function main() {
+  const manager = new THREE.LoadingManager();
+  const progressElement = document.querySelector('.progress-percent');
+  manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
+    // const percent = `${Math.floor(itemsLoaded / itemsTotal * 100)}%`;
+    const newItemsLoaded = Math.min(itemsLoaded, minLoadedMeshes);
+    const percent = `${Math.floor(newItemsLoaded / minLoadedMeshes * 100)}%`;
+    progressElement.style.width = percent;
+  };
   
   const canvas = document.createElement('canvas');
-  const loader = new GLTFLoader();
+  const loader = new GLTFLoader(manager);
   const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true});
   renderer.setScissorTest(true);
 
@@ -149,6 +172,7 @@ function main() {
     return {scene, camera, controls};
   }
 
+  let count = 0;
   const initFunctionTemplate = (mechType, disabledScroll) => (elem) => {
     // disabledScroll = true for hero + mechanisms list meshes
     const {scene, camera, controls} = makeScene(elem, disabledScroll);
@@ -163,24 +187,32 @@ function main() {
         if (o.isMesh) {
           const x = Math.random() * 0.8;
           o.material.metalness = x;
+          const wireframeGeometry = new THREE.WireframeGeometry( o.geometry );
+          const wireframeMaterial = new THREE.LineBasicMaterial( { color: 0x000000 } );
+   	      const wireframe = new THREE.LineSegments( wireframeGeometry, wireframeMaterial );
+          wireframe.material.opacity = 0.5;
+          wireframe.material.transparent = true;
+          o.add( wireframe );
         }
       });
       scene.add(gltf.scene);
       mesh.scale.set(0.2, 0.2, 0.2);
 
-      if (disabledScroll) {
+      count ++;
+      if (disabledScroll && count === minLoadedMeshes) {
         loadingSection.style.opacity = '0';
         introSection.style.opacity = '1';
+        mechanismsContainer.style.display = 'flex';
+        footerSection.style.display = 'flex';
         setTimeout(() => {
           loadingSection.style.display = 'none';
-        }, 1500);
-        mechanismsContainer.style.display = 'flex';
+        }, 1000);
       }
 
     }, function(progress) {
       if (disabledScroll) {
-        loadingSection.style.display = 'flex';
-        mechanismsContainer.style.display = 'none';
+        // loadingSection.style.display = 'flex';
+        // mechanismsContainer.style.display = 'none';
       }
     });
 
@@ -210,38 +242,67 @@ function main() {
     };
   };
 
-  // add elements from json
+  // add meshes
   const addMeshToScene = (meshHtmlElement, disabledScroll) => {
     const sceneName = meshHtmlElement.dataset.type;
     const sceneInitFunction = sceneInitFunctionsByName(disabledScroll)[sceneName];
     const sceneRenderFunction = sceneInitFunction(meshHtmlElement);
     addScene(meshHtmlElement, sceneRenderFunction);
   };
-  
-  jsonData.forEach((element) => {
-    const mechContainer = document.createElement('div');
-    mechContainer.className = `mechanism-container hover-container ${getMechType(element.type)}`;
-    handle3dClick(mechContainer, () => openBox(element));
 
-    const meshContainer = document.createElement('div');
-    meshContainer.className = 'mesh-container';
-    const mesh = document.createElement('div');
-    mesh.className += 'small-mesh';
-    mesh.setAttribute('data-type', getMechType(element.type));
-    addMeshToScene(mesh, true);
-    
-    const bgSvg = getBgSvg(element.type);
-    meshContainer.appendChild(mesh);
-    meshContainer.appendChild(bgSvg);
-
-    const title = document.createElement('p');
-    title.textContent = element.title;
-    title.className = 'mechanism-title hover-gradient-text';
-
-    mechContainer.appendChild(meshContainer);
-    mechContainer.appendChild(title);
-    mechanismsContainer.appendChild(mechContainer);
+  // intro section
+  const introBtn = document.querySelector('.intro-btn');
+  introBtn.addEventListener('click', () => {
+    const y = window.innerHeight;
+    window.scrollTo(0, y);
   });
+ 
+  const addIntroMeshes = () => {
+   for (let i = 0; i < introMeshes.length; i++) {
+     const element = introMeshes[i];
+     element.setAttribute('data-type', getMechType(i));
+     addMeshToScene(element, true);
+   };
+  }
+  // end intro section
+
+  fetch("./data.json")
+    .then(response => response.json())
+    .then(json => {
+      addIntroMeshes();
+      createMechanisms(json);
+      handleIntroClicks();
+      mechanismsNumber = json.length;
+    });
+  
+  const createMechanisms = (jsonData) => {
+    jsonData.forEach((element) => {
+      const mechContainer = document.createElement('div');
+      mechContainer.className = `mechanism-container hover-container ${getMechType(element.type)}`;
+      handle3dClick(mechContainer, () => openBox(element));
+
+      const meshContainer = document.createElement('div');
+      meshContainer.className = 'mesh-container';
+      const mesh = document.createElement('div');
+      mesh.className += 'small-mesh';
+      mesh.setAttribute('data-type', getMechType(element.type));
+      addMeshToScene(mesh, true);
+      
+      const bgSvg = getBgSvg(element.type);
+      meshContainer.appendChild(mesh);
+      meshContainer.appendChild(bgSvg);
+
+      const title = document.createElement('p');
+      title.textContent = element.title;
+      title.className = 'mechanism-title hover-gradient-text';
+
+      mechContainer.appendChild(meshContainer);
+      mechContainer.appendChild(title);
+      mechanismsContainer.appendChild(mechContainer);
+    });
+  }
+
+ 
 
   // modal
   const openBox = (element) => {
@@ -295,37 +356,7 @@ function main() {
     }
   });
 
-  // intro section
-  const introBtn = document.querySelector('.intro-btn');
-  introBtn.addEventListener('click', () => {
-    const y = window.innerHeight;
-    window.scrollTo(0, y);
-  });
-
-  const introMeshes = document.querySelectorAll('.intro_mesh');
-  for (let i = 0; i < introMeshes.length; i++) {
-    const element = introMeshes[i];
-    element.setAttribute('data-type', getMechType(i));
-    addMeshToScene(element, true);
-  };
-
-  const firstWeb1 = document.querySelector('.web1');
-  const firstWeb2 = document.querySelector('.web2');
-  const firstWeb3 = document.querySelector('.web3');
-  const firstOfType = [firstWeb1, firstWeb2, firstWeb3];
-
-  const introMeshesContainers = document.querySelectorAll('.intro_mesh-container');
-  introMeshesContainers.forEach((mesh, index) => {
-    handle3dClick(mesh, () => {
-      const startY = firstOfType[index].getBoundingClientRect().top;
-      window.scrollTo(0, startY - 0.1 * window.innerHeight);
-    });
-  });
-  // end intro section
-
-  function render(time) {
-    time *= 0.001;
-
+  const renderElements = (time) => {
     for (const {elem, fn, ctx} of sceneElements) {
       const dpr = window.devicePixelRatio;
       const rect = elem.getBoundingClientRect();
@@ -340,7 +371,7 @@ function main() {
 
       if (!isOffscreen) {
         // make sure the renderer's canvas is big enough
-        if (rendererCanvas.width < width || rendererCanvas.height < height) {
+        if ((rendererCanvas.width !== width || rendererCanvas.height !== height) && width !== 0 && height !== 0) {
           renderer.setSize(width * dpr, height * dpr, false);
         }
         
@@ -363,7 +394,11 @@ function main() {
             0, 0, width * dpr, height * dpr);                              // dst rect
       }
     }
+  };
 
+  function render(time) {
+    time *= 0.001;
+    renderElements(time);
     requestAnimationFrame(render);
   }
 
