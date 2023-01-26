@@ -272,7 +272,6 @@ function main() {
       addIntroMeshes();
       createMechanisms(json);
       handleIntroClicks();
-      mechanismsNumber = json.length;
     });
   
   const createMechanisms = (jsonData) => {
