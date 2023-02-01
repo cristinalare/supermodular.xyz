@@ -54,6 +54,12 @@
     "type": 1
   },
   {
+    "title": "MolochDAO",
+    "description": "The DAO that ",
+    "link": "https://molochdao.com/",
+    "type": 2
+  },
+  {
     "title": "Conviction Voting",
     "description": "This coordination tool mitigates plutocracy in a similar way as quadratic funding but with time. If you have more tokens, you have more voice, but even if you have a minority share, you can still pass a large proposal; it just takes more time for it to pass. It’s just like voting with proposals, but instead of having a time limit to voice your choice, all the proposals compete against each other, and you allocate your tokens in various ways to your preferences. It comes from Micahel Zargham and others and was implemented by 1Hive. It works really well if there are a lot of proposals competing and a clear budget of how much the community wants to allocate in a given time. \n\n Tokens get staked behind a proposal and can be removed or reallocated at any time. Proposals gain voting power the longer the tokens remain staked behind the proposal, and once the proposal meets its threshold, the proposal passes. Proposals asking less money have a lower threshold. Bad: need a lot of proposals to compete, otherwise it’s too easy to pass a proposal. Good: minority opinions can actually pass proposals.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1388s",
@@ -181,12 +187,6 @@
   },
   {
     "title": "Web3 Social",
-    "description": "This category encompasses all that can enable a more regenerative crypto economic world. Decentralized social media apps are great because of the sovereignty, the privacy and the fact that we can take our social graphs from site to site. Network effect needs to be built, and it will take time. Once we’ve got our attention moved away from web2 social, and we own our own social graph and can fork the interface, what innovation does that enable?",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7999s",
-    "type": 2
-  },
-  {
-    "title": "MolochDAO",
     "description": "This category encompasses all that can enable a more regenerative crypto economic world. Decentralized social media apps are great because of the sovereignty, the privacy and the fact that we can take our social graphs from site to site. Network effect needs to be built, and it will take time. Once we’ve got our attention moved away from web2 social, and we own our own social graph and can fork the interface, what innovation does that enable?",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7999s",
     "type": 2
