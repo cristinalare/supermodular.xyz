@@ -105,6 +105,15 @@ const handleIntroClicks = () => {
     });
   });
 }
+
+const formatMechTitle = (title) => {
+  return title.replaceAll(' ', '');
+}
+
+const formatBackMechTitle = (title) => {
+  return title.replace(/([A-Z])/g, ' $1').trim();
+}
+
 // end helpers
 
 function main() {
@@ -266,9 +275,77 @@ function main() {
   }
   // end intro section
 
+  // modal
+  const openBox = (element) => {
+    history.pushState('', '', `./#${formatMechTitle(element.title)}`);
+    overlay.style.display = "block";
+    mechanismBox.style.display = 'flex';
+    mechanismBox.id = element.title;
+    setTimeout(() => {
+      mechanismBox.style.opacity = 1;
+      overlay.style.opacity = 1; 
+    }, 5);
+
+    mechanismBoxTitle.textContent = element.title;
+    mechanismBoxDescription.textContent = element.description;
+    if (!element.link) {
+      mechanismBoxMore.style.display = 'none';
+    } else {
+      const link = element.link;
+      mechanismBoxMore.style.display = 'block';
+      handle3dClick(mechanismBoxLink, () => window.open(link, '_blank'));
+    }
+
+    const prevCanvas = mechanismBoxMesh.firstChild;
+    prevCanvas && prevCanvas.remove();
+    mechanismBoxMesh.className = 'large-mesh';
+    mechanismBoxMesh.setAttribute('data-type', getMechType(element.type));
+    addMeshToScene(mechanismBoxMesh);
+  };
+
+  mechanismBox.addEventListener('click', modalClick);
+  function modalClick(e) {
+    e.stopPropagation();
+    return false;
+  }
+ 
+  const closeBox = (e) => {
+    history.pushState('', '', './');
+    e && e.stopPropagation();
+    mechanismBox.style.opacity = 0;
+    
+    setTimeout(() => {
+      overlay.style.opacity = 0; 
+      overlay.style.display = "none";
+      mechanismBox.style.display = "none";
+    }, 400);
+  };
+
+  overlay.addEventListener('click', closeBox);
+  closeModalBtn.addEventListener('click', closeBox);
+
+  document.addEventListener('keyup', (e) => {
+    if(e.key === "Escape") {
+      closeBox();
+    }
+  });
+
+  const openBoxFromUrl = (jsonData) => {
+    const url = window.location.href;
+    const selectedMech = url.indexOf('#');
+    if(selectedMech !== -1) {
+      const mechTitle = formatBackMechTitle(url.slice(selectedMech + 1));
+      const mechElement = jsonData.find(element => element.title === mechTitle);
+      mechElement && openBox(mechElement);
+    }
+  };
+
+  // create mechanisms
+
   fetch("./data.json")
     .then(response => response.json())
     .then(json => {
+      openBoxFromUrl(json);
       addIntroMeshes();
       createMechanisms(json);
       handleIntroClicks();
@@ -301,60 +378,7 @@ function main() {
     });
   }
 
- 
-
-  // modal
-  const openBox = (element) => {
-    overlay.style.display = "block";
-    mechanismBox.style.display = 'flex';
-    setTimeout(() => {
-      mechanismBox.style.opacity = 1;
-      overlay.style.opacity = 1; 
-    }, 5);
-
-    mechanismBoxTitle.textContent = element.title;
-    mechanismBoxDescription.textContent = element.description;
-    if (!element.link) {
-      mechanismBoxMore.style.display = 'none';
-    } else {
-      const link = element.link;
-      mechanismBoxMore.style.display = 'block';
-      handle3dClick(mechanismBoxLink, () => window.open(link, '_blank'));
-    }
-
-    const prevCanvas = mechanismBoxMesh.firstChild;
-    prevCanvas && prevCanvas.remove();
-    mechanismBoxMesh.className = 'large-mesh';
-    mechanismBoxMesh.setAttribute('data-type', getMechType(element.type));
-    addMeshToScene(mechanismBoxMesh);
-  };
-
-  mechanismBox.addEventListener('click', modalClick);
-  function modalClick(e) {
-    e.stopPropagation();
-    return false;
-  }
- 
-  const closeBox = (e) => {
-    e && e.stopPropagation();
-    mechanismBox.style.opacity = 0;
-    
-    setTimeout(() => {
-      overlay.style.opacity = 0; 
-      overlay.style.display = "none";
-      mechanismBox.style.display = "none";
-    }, 400);
-  };
-
-  overlay.addEventListener('click', closeBox);
-  closeModalBtn.addEventListener('click', closeBox);
-
-  document.addEventListener('keyup', (e) => {
-    if(e.key === "Escape") {
-      closeBox();
-    }
-  });
-
+  // render
   const renderElements = (time) => {
     for (const {elem, fn, ctx} of sceneElements) {
       const dpr = window.devicePixelRatio;
