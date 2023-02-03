@@ -498,7 +498,6 @@ canvas {
 
 footer {
   box-sizing: border-box;
-  display: none;
   max-width: min(60rem, 90vw);
   padding:  3rem 5%;
   margin: 5rem auto;
@@ -506,6 +505,7 @@ footer {
   flex-direction: column;
   gap: 1.5rem;
   border: 1px solid var(--color-blue);
+  display: none;
 }
 
 .footer-card {

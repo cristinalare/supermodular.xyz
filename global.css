@@ -64,7 +64,8 @@ a {
 }
 
 .hover-gradient-text,
-.gradient-text {
+.gradient-text,
+.main-link {
   transition: all 0.4s ease-out;
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -78,7 +79,8 @@ a {
 	background-clip: text;
 }
 
-.hover-gradient-text {
+.hover-gradient-text,
+.main-link {
   color: white;
 }
 
@@ -87,8 +89,13 @@ a {
 }
 
 .gradient-text,
-.hover-container:hover .hover-gradient-text{
+.hover-container:hover .hover-gradient-text,
+.main-link:hover {
   color: transparent;
+}
+
+.main-link {
+  font-size: 110%;
 }
 
 /* header */
