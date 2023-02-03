@@ -107,11 +107,11 @@ const handleIntroClicks = () => {
 }
 
 const formatMechTitle = (title) => {
-  return title.replaceAll(' ', '');
+  return title.replaceAll(' ', '_');
 }
 
 const formatBackMechTitle = (title) => {
-  return title.replace(/([A-Z])/, ' $1').trim();
+  return title.replaceAll('_', ' ');
 }
 
 // end helpers
