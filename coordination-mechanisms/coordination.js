@@ -111,7 +111,7 @@ const formatMechTitle = (title) => {
 }
 
 const formatBackMechTitle = (title) => {
-  return title.replace(/([A-Z])/g, ' $1').trim();
+  return title.replace(/([A-Z])/, ' $1').trim();
 }
 
 // end helpers
