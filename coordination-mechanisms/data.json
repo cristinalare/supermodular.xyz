@@ -30,12 +30,6 @@
     "type": 0
   },
   {
-    "title": "Conviction Voting",
-    "description": "This coordination tool mitigates plutocracy in a similar way as quadratic funding but with time. If you have more tokens, you have more voice, but even if you have a minority share, you can still pass a large proposal; it just takes more time for it to pass. It’s just like voting with proposals, but instead of having a time limit to voice your choice, all the proposals compete against each other, and you allocate your tokens in various ways to your preferences. It comes from Micahel Zargham and others and was implemented by 1Hive. It works really well if there are a lot of proposals competing and a clear budget of how much the community wants to allocate in a given time. \n\n Tokens get staked behind a proposal and can be removed or reallocated at any time. Proposals gain voting power the longer the tokens remain staked behind the proposal, and once the proposal meets its threshold, the proposal passes. Proposals asking less money have a lower threshold. Bad: need a lot of proposals to compete, otherwise it’s too easy to pass a proposal. Good: minority opinions can actually pass proposals.",
-    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1388s",
-    "type": 1
-  },
-  {
     "title": "Effective Altruism",
     "description": "Less popular in the wake of SBF and FTX, effective altruism is based on the theory that we don’t actually give to have an impact; we give to feel better about ourselves. As a philosophy, what if we categorize causes by which were creating the most good on a utilitarian basis? Let’s take an analytical approach: if I give $5, I can get 5 mosquito nets, saving more lives than any other possible use of those funds. What if we could rank our causes and only give our money to the most effective? It’s interesting when paired with giving what you can pledge. Con: it only gives to things that have impact today. It only works well at scale. Con: earn-to-give got a damaged reputation after SBF manipulated the idea. Just give along the way as you’re earning. \n\n Challenge: Analyzing impact data is hard. Impact is by nature qualitative, and we’re trying to quantify it. How do you value a sunset vs. oatmeal? It’s all a money-vector. Ethical dilemmas: why our capital goes to the things it does. So it’s difficult to collapse all the various subjective value vectors into one vector, money.",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2382s",
@@ -58,6 +52,18 @@
     "description": "Private goods are rivalrous. Take for example an iPhone: you have to be able to afford it to have it. Public goods are nonrivalrous. Take for example breathing the air: everyone has access to the air regardless of their finances. Network goods get more valuable the more people consume them like open-source software. NFTs fall here. The more attention is given to NFT art, the more value is attributed to it. Inverts scarcity based models by increasing its value the more it is shared. \n\n Lots of love going on in this interlude about different regen orgs supporting each other!",
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=2228s",
     "type": 1
+  },
+  {
+    "title": "MolochDAO",
+    "description": "The original grant giving DAO. MolochDAO is a Decentralized Autonomous Organization, deployed on Ethereum mainnet. Members contribute capital with the sole intention of giving it all away to fund Ethereum infrastructure as an essential digital public good.",
+    "link": "https://molochdao.com/",
+    "type": 2
+  },
+  {
+    "title": "Conviction Voting",
+    "description": "This coordination tool mitigates plutocracy in a similar way as quadratic funding but with time. If you have more tokens, you have more voice, but even if you have a minority share, you can still pass a large proposal; it just takes more time for it to pass. It’s just like voting with proposals, but instead of having a time limit to voice your choice, all the proposals compete against each other, and you allocate your tokens in various ways to your preferences. It comes from Micahel Zargham and others and was implemented by 1Hive. It works really well if there are a lot of proposals competing and a clear budget of how much the community wants to allocate in a given time. \n\n Tokens get staked behind a proposal and can be removed or reallocated at any time. Proposals gain voting power the longer the tokens remain staked behind the proposal, and once the proposal meets its threshold, the proposal passes. Proposals asking less money have a lower threshold. Bad: need a lot of proposals to compete, otherwise it’s too easy to pass a proposal. Good: minority opinions can actually pass proposals.",
+    "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=1388s",
+    "type": 2
   },
   {
     "title": "Retroactive Public Goods Funding",
@@ -185,4 +191,5 @@
     "link": "https://www.youtube.com/watch?v=qyd7mvQmn5I&t=7999s",
     "type": 2
   }
+
 ]
