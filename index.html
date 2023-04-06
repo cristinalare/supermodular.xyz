@@ -51,18 +51,14 @@
       ></lottie-player>
     </div>
 
-    <ul class="menu">
-      <li class="hover-container">
-        <a href="/coordination-mechanisms" class="hover-gradient-text">Coordination Mechanisms</a>
-      </li>
-      <li class="hover-container">
-        <a href="https://community.supermodular.xyz/" target="_blank" class="hover-gradient-text">Community</a>
-      </li>
-    </ul>
-
     <svg class="menu-icon" role="img" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
       <title>menu icon</title>
       <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24px" height="24px">
+      <title>close menu icon</title>
+      <path fill="currentColor"
+        d="M51.092 15.737L48.263 12.908 32 29.172 15.737 12.908 12.908 15.737 29.172 32 12.908 48.263 15.737 51.092 32 34.828 48.263 51.092 51.092 48.263 34.828 32z" />
     </svg>
   </header>
 
@@ -71,7 +67,7 @@
     <canvas id="hero" class="hero-img" width="329" height="329"></canvas>
     <div class="hero-content">
       <h1 class="gradient-text">Our purpose is to cultivate a more regenerative digital frontier</h1>
-      <button class="cta-btn">Stay up to date</button>
+      <button id="signup-btn" class="cta-btn">Stay up to date</button>
     </div>
   </div>
 
@@ -89,7 +85,7 @@
   <!-- projects -->
   <section class="projects">
     <h2 class="gradient-text nopad">cohort 1</h2>
-    <h2 class="gradient-text sub">( Alumni 🌱 | 2019 - 2021)</h2>
+    <h2 class="gradient-text sub">(2019 - 2021)</h2>
     <div class="projects-container">
       <a href="https://gitcoin.co/" target="_blank" class="project-container hover-container">
         <div class="project-card">
@@ -357,7 +353,7 @@
   </footer>
 
   <div class="overlay hidden">
-    <div class="modal hidden" id="mc_embed_signup">
+    <div class="modal signup-modal hidden" id="mc_embed_signup">
       <form action="https://xyz.us18.list-manage.com/subscribe/post?u=440d93cdf1197d43be6f8a47d&amp;id=23686c1b3e&amp;f_id=005b20e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
           <h2 class="gradient-text">Subscribe for updates</h2>
@@ -407,6 +403,116 @@
       </form>
     </div>
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+  </div>
+
+  <!-- menu -->
+  <div class="menu-overlay hidden">
+    <div class="modal menu-modal hidden">
+      <div class="menu">
+        <div class="menu-inner">
+          <ul>
+            <div>
+              <h3>Education</h3>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item selected">Greenpill</h4>
+              </li>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item">Coordination Mech</h4>
+              </li>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item">Crypto OG Book</h4>
+              </li>
+            </div>
+            <div>
+              <h3>Modules</h3>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item">Gitcoin</h4>
+              </li>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item">Kernel</h4>
+              </li>
+              <li class="hover-container">
+                <h4 class="hover-gradient-text menu-item">Buidlbox</h4>
+              </li>
+            </div>
+          </ul>
+          <div class="menu-divider"></div>
+          <div class="menu-divider-mobile"></div>
+          <div class="menu-project first">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Greenpill</h3>
+              <p>We explore the intersection of programmable money, game theory, and mechanism design. We search for powerful
+                new ways to to fund, design, develop, and market regenerative web3 era applications and digital assets. We
+                launch the meme of regenerative crypto economics into the world.</p>
+              <a href="https://greenpill.party/" target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/greenpill-menu.svg" width="270" height="270" alt="greenpill" />
+          </div>
+          <div class="menu-project">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Coordination<br />
+                Mechanisms</h3>
+              <p>It's all coordination & it always has been. Now that we can program our values into our money, that will
+                deepen our
+                ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination
+                mechanism
+                design space below.</p>
+              <a href="/coordination-mechanisms" target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/coord-mech.svg" width="216" height="247" alt="coordination mechanisms" />
+          </div>
+          <div class="menu-project">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Stuff Only<br />
+                Crypto OG Know</h3>
+              <p>First cycle you was a tourist. YOU chased the pump. Bought the Pico Top. Didn’t self custody. You have bags.
+                so many
+                bags. First cycle you is NGMI. Multi cycle you played the long game. Rode the waves. Stayed hungry, stayed
+                humble, did
+                the work. Multi cycle you knows wagmi.
+                This tome of “stuff crypto ogs know” is your guide to being a multi-cycle crypto citizen.</p>
+              <a href="https://store.supermodular.xyz/products/stuff-crypto-ogs-know-book-digital?pr_prod_strat=use_description&pr_rec_id=dce751293&pr_rec_pid=8133680628014&pr_ref_pid=8133684199726&pr_seq=uniform"
+                target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/crypto-og.svg" width="202" height="250" alt="book Stuff Only Crypto OG Know" />
+          </div>
+      
+          <div class="menu-project">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Gitcoin</h3>
+              <p>web3 technology like open source protocols and decentralized blockchains give us the ability to take
+                co-creation to a
+                new scale. The Gitcoin ecosystem uses this technology to fund and build digital public goods projects that
+                serve
+                everyone, and solve our most immediate problems.</p>
+              <a href="https://www.gitcoin.co/" target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/gitcoin.svg" width="125" height="150" alt="gitcoin" />
+          </div>
+          <div class="menu-project">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Kernel</h3>
+              <p>Kernel is a peer-to-peer learning community dedicated to the journey towards a better understanding of truth:
+                in our
+                work, in our relationships with others, and in our inner worlds</p>
+              <a href="https://www.kernel.community/en/" target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/kernel.svg" width="150" height="150" alt="kernel" />
+          </div>
+          <div class="menu-project">
+            <div class="menu-project-content">
+              <h3 class="gradient-text">Buidlbox</h3>
+              <p>Host, co-sponsor and participate in hackathons. buidlbox is an end-to-end hackathons platform enabling
+                buidlers and
+                guidls with everything needed to gain novel skills, earn prizes, grow communities, and buidl a better web
+                together.</p>
+              <a href="https://buidlbox.io/" target="_blank"><button class="cta-btn">Find out more</button></a>
+            </div>
+            <img src="./images/menu/buidlbox.svg" width="150" height="150" alt="buidlbox" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>

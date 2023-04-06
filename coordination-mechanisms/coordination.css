@@ -481,18 +481,7 @@ canvas {
   display: none;
   transition: all 0.2s ease-out;
 }
-.modal-close {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 101;
-  cursor: pointer;
-  color: white;
-  transition: color 0.4s ease-out;
-}
-.modal-close:hover {
-  color: var(--color-green);
-}
+
 
 /* footer */
 

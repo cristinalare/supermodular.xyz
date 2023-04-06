@@ -10,23 +10,6 @@ section {
   margin: 10rem 2rem;
 }
 
-/* header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu {
-  display: flex;
-  gap: 1.75rem;
-}
-
-.menu a {
-  font-weight: 300;
-  font-size: 1.2rem;
-}
-
 h2.nopad {
   padding-bottom: 2rem;
 }
@@ -39,49 +22,140 @@ a {
   font-size: 1.5rem;
 }
 
-.menu-icon {
-  display: none;
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* mobile menu */
+.menu a {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
 
-@media only screen and (max-width: 600px) {
+/* menu modal */
+
+  .menu-modal {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
   .menu {
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-out;
     background: rgba(0, 0, 0, 0.9);
     z-index: 99;
     padding: 10%;
-    opacity: 0;
-    display: none;
   }
 
-  .menu.open {
-    opacity: 1;
-    transition: all 0.3s ease-out;
-    display: flex;
-  }
-  .menu-icon {
+  .menu-icon,
+  .close-icon {
     display: block;
     color: #FFFFFF;
     transition: all 0.4s ease-out;
     cursor: pointer;
     z-index: 100;
   }
-  .menu-icon:hover {
+  .menu-icon:hover,
+  .close-icon:hover {
     color: var(--color-green);
+  }
+
+  .close-icon {
+    display: none;
   }
 
   .menu a {
     color: transparent;
   }
-}
+
+  .menu p,
+  .menu li {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .menu-inner {
+    padding-block: 3.5rem;
+    display: flex;
+    gap: 2.5rem;
+    max-width: 60rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .menu-divider {
+    width: 1px;
+    background: var(--gradient);
+  }
+    .menu-divider-mobile {
+      display: none;
+      height: 1px;
+      background: var(--gradient);
+    }
+
+  .menu ul {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    
+  }
+  .menu ul h3 {
+    padding-bottom: 1rem;
+  }
+  .menu ul > * {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: max-content;
+  }
+
+  .menu li {
+    width: fit-content;
+    margin-left: auto;
+    color: white;
+  }
+  
+  .menu .selected {
+    color: transparent;
+  }
+
+  .menu-project {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    height: fit-content;
+  }
+  .menu-project {
+    display: none;
+  }
+
+  .menu-project.first {
+    display: flex;
+  }
+  
+  .menu-project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 30rem;
+  }
+  .menu-project-content h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+    width: fit-content;
+  }
+  .menu-project-content button {
+    margin-left: 0;
+  }
+  .menu-project img {
+    align-self: center;
+  }
 
 /* hero section */
 
@@ -123,6 +197,13 @@ a {
 }
 
 @media only screen and (max-width: 900px) {
+  .menu {
+    padding: 8% 3rem;
+  }
+  .menu-project img {
+    max-width: 30%;
+    height: auto;
+  }
   .hero-section {
     flex-direction: column;
     text-align: center;
@@ -143,11 +224,43 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+  .menu {
+    padding: 1.5rem;
+  }
+  .menu p,
+  .menu li {
+    font-size: 0.85rem;
+  }
   .hover-section {
     gap: 1rem;
   }
   .hero-content {
     gap: 1rem;
+  }
+  .menu-inner {
+    flex-direction: column;
+  }
+  .menu-inner ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .menu-inner ul div > * {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .menu-divider-mobile {
+    display: block;
+  }
+  .menu-divider {
+    display: none;
+  }
+  .menu-project {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .menu-project-content h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -352,13 +465,10 @@ footer {
   }
 }
 
-/* modal */
+/* signup modal */
 
 .modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   border-radius: 10px;
   width: 100%;
@@ -366,6 +476,13 @@ footer {
   opacity: 0;
   display: none;
 }
+
+.signup-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .modal h2 {
   text-align: left;
@@ -424,8 +541,8 @@ footer {
   border: none;
 }
 
-.overlay {
-  position: fixed;
+.overlay,
+.menu-overlay {
   position: fixed;
   top: 25%;
   left: 25%;
