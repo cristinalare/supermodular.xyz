@@ -14,8 +14,7 @@ const mechanismBoxDescription = document.querySelector('.mechanism-box_descripti
 const mechanismBoxLink = document.querySelector('.mechanism-box_link');
 const mechanismBoxMore = document.querySelector('.mechanism-box_more');
 const mechanismBoxMesh = document.querySelector('.mechanism-box_mesh');
-let startClick, endClick, startClickPosition, endClickPosition;;
-
+let startClick, endClick, startClickPosition, endClickPosition;
 const footerSection = document.querySelector('footer');
 const introSection = document.querySelector('.intro');
 const introMeshes = document.querySelectorAll('.intro_mesh');
@@ -182,7 +181,7 @@ function main() {
   }
 
   let count = 0;
-  const initFunctionTemplate = (mechType, disabledScroll) => (elem) => {
+  const initFunctionTemplate = (mechType, disabledScroll, i) => (elem) => {
     // disabledScroll = true for hero + mechanisms list meshes
     const {scene, camera, controls} = makeScene(elem, disabledScroll);
     let mesh;
@@ -194,12 +193,22 @@ function main() {
       mesh = gltf.scene;
       mesh.traverse((o) => {
         if (o.isMesh) {
-          const x = Math.random() * 0.8;
+          const x = !i ? Math.random() * 0.7 : i % 3 == 0 ? 0.1 : i % 3 === 1 ? 0.7 : 0.4;
           o.material.metalness = x;
+
+          if (i) {
+            let geometry;
+            if (i % 4 === 0) geometry = new THREE.OctahedronGeometry( 3, 0 );
+            else if (i % 4 === 1) geometry = new THREE.DodecahedronGeometry( 3, i % 3 === 0 ? 0 : 1 );
+            else if (i % 4 === 2) geometry = new THREE.TorusGeometry( 2.7, 0.7, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20);
+            else if (i % 4 === 3) geometry = new THREE.SphereGeometry( 3, i % 3 == 0 ? 1 : i % 3 == 1 ? 10 : 25, 16 );
+            o.geometry = geometry;
+          }
+          
           const wireframeGeometry = new THREE.WireframeGeometry( o.geometry );
           const wireframeMaterial = new THREE.LineBasicMaterial( { color: 0x000000 } );
    	      const wireframe = new THREE.LineSegments( wireframeGeometry, wireframeMaterial );
-          wireframe.material.opacity = 0.5;
+          wireframe.material.opacity = i % 4 == 0 ? 0.85 : i % 3 == 1 ? 0.3 : i % 4 == 3 ? 0.15 : 0.5;
           wireframe.material.transparent = true;
           o.add( wireframe );
         }
@@ -243,18 +252,18 @@ function main() {
     };
   };
 
-  const sceneInitFunctionsByName = (disabledScroll) => {
+  const sceneInitFunctionsByName = (disabledScroll, i) => {
     return {
       'web1': initFunctionTemplate('web1', disabledScroll),
       'web2': initFunctionTemplate('web2', disabledScroll),
-      'web3': initFunctionTemplate('web3', disabledScroll),
+      'web3': initFunctionTemplate('web3', disabledScroll, i),
     };
   };
 
   // add meshes
-  const addMeshToScene = (meshHtmlElement, disabledScroll) => {
+  const addMeshToScene = (meshHtmlElement, disabledScroll, i) => {
     const sceneName = meshHtmlElement.dataset.type;
-    const sceneInitFunction = sceneInitFunctionsByName(disabledScroll)[sceneName];
+    const sceneInitFunction = sceneInitFunctionsByName(disabledScroll, i)[sceneName];
     const sceneRenderFunction = sceneInitFunction(meshHtmlElement);
     addScene(meshHtmlElement, sceneRenderFunction);
   };
@@ -276,7 +285,7 @@ function main() {
   // end intro section
 
   // modal
-  const openBox = (element) => {
+  const openBox = (element, i) => {
     history.pushState('', '', `./#${formatMechTitle(element.title)}`);
     overlay.style.display = "block";
     mechanismBox.style.display = 'flex';
@@ -300,7 +309,7 @@ function main() {
     prevCanvas && prevCanvas.remove();
     mechanismBoxMesh.className = 'large-mesh';
     mechanismBoxMesh.setAttribute('data-type', getMechType(element.type));
-    addMeshToScene(mechanismBoxMesh);
+    addMeshToScene(mechanismBoxMesh, false, i);
   };
 
   mechanismBox.addEventListener('click', modalClick);
@@ -335,13 +344,15 @@ function main() {
     const selectedMech = url.indexOf('#');
     if(selectedMech !== -1) {
       const mechTitle = formatBackMechTitle(url.slice(selectedMech + 1));
-      const mechElement = jsonData.find(element => element.title === mechTitle);
-      mechElement && openBox(mechElement);
+      let mechElement, i;
+      jsonData.forEach((element, index) => {
+        if (element.title === mechTitle) { mechElement = element; i = index; return;}
+      });
+      mechElement && openBox(mechElement, i);
     }
   };
 
   // create mechanisms
-
   fetch("./data.json")
     .then(response => response.json())
     .then(json => {
@@ -352,17 +363,17 @@ function main() {
     });
   
   const createMechanisms = (jsonData) => {
-    jsonData.forEach((element) => {
+    jsonData.forEach((element, index) => {
       const mechContainer = document.createElement('div');
       mechContainer.className = `mechanism-container hover-container ${getMechType(element.type)}`;
-      handle3dClick(mechContainer, () => openBox(element));
+      handle3dClick(mechContainer, () => openBox(element, index));
 
       const meshContainer = document.createElement('div');
       meshContainer.className = 'mesh-container';
       const mesh = document.createElement('div');
       mesh.className += 'small-mesh';
       mesh.setAttribute('data-type', getMechType(element.type));
-      addMeshToScene(mesh, true);
+      addMeshToScene(mesh, true, index);
       
       const bgSvg = getBgSvg(element.type);
       meshContainer.appendChild(mesh);
