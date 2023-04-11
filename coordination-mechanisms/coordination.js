@@ -196,12 +196,26 @@ function main() {
           const x = !i ? Math.random() * 0.7 : i % 3 == 0 ? 0.1 : i % 3 === 1 ? 0.7 : 0.4;
           o.material.metalness = x;
 
-          if (i) {
+          if (i && mechType == 'web3') {
             let geometry;
             if (i % 4 === 0) geometry = new THREE.OctahedronGeometry( 3, 0 );
             else if (i % 4 === 1) geometry = new THREE.DodecahedronGeometry( 3, i % 3 === 0 ? 0 : 1 );
-            else if (i % 4 === 2) geometry = new THREE.TorusGeometry( 2.7, 0.7, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20);
+            else if (i % 4 === 2) return;
             else if (i % 4 === 3) geometry = new THREE.SphereGeometry( 3, i % 3 == 0 ? 1 : i % 3 == 1 ? 10 : 25, 16 );
+            o.geometry = geometry;
+
+          } else if (i && mechType == 'web1') {
+            let geometry;
+            if (i % 4 === 0) geometry = new THREE.RingGeometry( 0.9, 1.4, i % 3 == 0 ? 8 : i % 3 == 1 ? 5 : 4);
+            else if (i % 4 === 1) geometry = new THREE.CylinderGeometry( 1.2, 1.2, 0.1, i % 3 == 0 ? 8 : i % 3 == 1 ? 5 : 4 );
+            else if (i % 4 === 2)  geometry =  new THREE.ConeGeometry( 1.2, 1, i % 3 == 0 ? 10 : i % 3 == 1 ? 20 : 30);
+            else if (i % 4 === 3) return;
+            o.geometry = geometry;
+          } else if (i && mechType == 'web2') {
+            let geometry;
+            if (i % 3 === 0) geometry = new THREE.TetrahedronGeometry( 2.8, 0 );
+            else if (i % 3 === 1) geometry = new THREE.TorusGeometry( 1.6, 0.5, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20, i % 3 == 0 ? 5 : i % 3 == 1 ? 8 : 20);
+            else if (i % 3 === 2) return;
             o.geometry = geometry;
           }
           
@@ -254,8 +268,8 @@ function main() {
 
   const sceneInitFunctionsByName = (disabledScroll, i) => {
     return {
-      'web1': initFunctionTemplate('web1', disabledScroll),
-      'web2': initFunctionTemplate('web2', disabledScroll),
+      'web1': initFunctionTemplate('web1', disabledScroll, i),
+      'web2': initFunctionTemplate('web2', disabledScroll, i),
       'web3': initFunctionTemplate('web3', disabledScroll, i),
     };
   };
