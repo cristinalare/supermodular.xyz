@@ -1,10 +1,21 @@
 :root {
-  --color-dark: #041e42;
-  --color-blue: #5784F7;
-  --color-green: #3CDBC0;
-  --gradient: linear-gradient(312.31deg, #08FFB8 30.49%, #5799F7 94.47%);
-  --gradient-reverted: linear-gradient(312.31deg, #5799F7 30.49%, #08FFB8 94.47%);
+  --color-purple: #8E81F0;
+  --color-dark: #00433B;
+  --color-orange: #AF5E42;
+  --color-blue: #3180A9;
+  --color-yellow: #AE9F49;
+  --color-white: #FAF7F3;
   accent-color: var(--color-green);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+.text-blue {
+  color: var(--color-blue);
+}
+.text-yellow {
+  color: var(--color-yellow);
 }
 
 ::-webkit-scrollbar {
@@ -18,27 +29,44 @@
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gradient);
+  background: var(--color-orange);
 }
 
 html {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori/PPMori-Regular.otf") format("opentype");
+  font-style: normal;    
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 110%;
-  overflow-x: hidden;
-  color: white;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori/PPMori-SemiBold.otf") format("opentype");
+  font-style: normal;    
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "DMMono";
+  src: url("/fonts/DMMono/DMMono-Regular.ttf") format('truetype');
+  font-style: normal;    
+  font-weight: 400;
+}
+@font-face {
+  font-family: "DMMono";
+  src: url("/fonts/DMMono/DMMono-Medium.ttf") format('truetype');
+  font-style: normal;    
+  font-weight: 500;
 }
 
 h1 {
-  font-weight: 900;
+  font-weight: 400;
   font-size: 3rem;
   line-height: 4.25rem;
+  font-family: 'PPMori';
 }
 
 h2 {
@@ -50,48 +78,40 @@ h2 {
   padding-bottom: 5rem;
   width: fit-content;
   margin: 0 auto;
+  font-family: 'DMMono';
 }
 
-h3,
-a {
+h3 {
   font-weight: 800;
-  font-size: 1.5rem;
 }
 
 a {
+  font-weight: 500;
   text-decoration: none;
   color: unset;
 }
 
-.hover-gradient-text,
-.gradient-text,
 .main-link {
   transition: all 0.4s ease-out;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-	background-clip: text;
+  color: var(--color-dark);
 }
-
-.h2-sm.gradient-text {
-  letter-spacing: 0.08em;
-  background: var(--gradient-reverted);
-  -webkit-background-clip: text;
-	background-clip: text;
-}
-
-.hover-gradient-text,
-.main-link {
-  color: white;
+.main-link:hover {
+  transition: all 0.4s ease-out;
+  color: var(--color-purple);
 }
 
 .hover-container {
   cursor: pointer;
 }
 
-.gradient-text,
-.hover-container:hover .hover-gradient-text,
-.main-link:hover {
-  color: transparent;
+.hover-text,
+.mechanism-title,
+.mechanism-box_title {
+  font-family: 'DMMono';
+}
+
+.hover-container:hover .hover-text {
+  color: var(--color-purple);
 }
 
 .main-link {

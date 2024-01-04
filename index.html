@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>supermodular.xyz</title>
-  <meta name="description" content="We build supermodular software, where the sum is greater than the whole of its parts.  Let's cultivate a more regenerative digital frontier, together.">
 
-	<!-- twitter cards & og -->
-	<meta name="twitter:domain" content="supermodular.xyz" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@supermodularxyz" />
-	<meta name="twitter:title" content="supermodular.xyz" />
-	<meta name="twitter:description" content="We build supermodular software, where the sum is greater than the whole of its parts.  Let's cultivate a more regenerative digital frontier, together.">
-	<meta name="twitter:image" content="https://supermodular.xyz/images/super-modular-card.png" />
-	
-	<meta property="og:title" content="supermodular.xyz">
-	<meta property="og:description" content="We build supermodular software, where the sum is greater than the whole of its parts.  Let's cultivate a more regenerative digital frontier, together.">
-  <meta property="og:url" content="https://supermodular.xyz">
-  <meta property="og:image" itemprop="image" content="https://supermodular.xyz/images/super-modular-card.png">
-	<!-- icons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Coordination Mechanisms</title>
+  <meta name="description"
+    content="It's all coordination & it always has been. Now that we can program our values into our money, that will deepen our ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination mechanism design space below.">
+
+  <!-- twitter cards & og -->
+  <meta name="twitter:domain" content="supermodular.xyz" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@supermodularxyz" />
+  <meta name="twitter:title" content="Coordination Mechanisms" />
+  <meta name="twitter:description"
+    content="It's all coordination & it always has been. Now that we can program our values into our money, that will deepen our ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination mechanism design space below.">
+  <meta name="twitter:image" content="https://supermodular.xyz/images/coordination-mechanisms-card.png" />
+
+  <meta property="og:title" content="Coordination Mechanisms">
+  <meta property="og:description"
+    content="It's all coordination & it always has been. Now that we can program our values into our money, that will deepen our ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination mechanism design space below.">
+  <meta property="og:url" content="https://supermodular.xyz/coordination-mechanisms">
+  <meta property="og:image" itemprop="image" content="https://supermodular.xyz/images/coordination-mechanisms-card.png">
+  <!-- icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="manifest" href="/icons/site.webmanifest">
   <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
@@ -28,506 +31,135 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="/icons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-	<!-- preloads -->
-	<link rel="preload" as="image" href="./images/bkg-lines.svg">
-  <link rel="preload" as="image" href="./images/img-sequence/0.png">
-	<!-- fonts & stylesheets -->
-	<link rel="stylesheet" type="text/css" href="reset.css">
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="global.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- fonts & stylesheets -->
+  <link rel="stylesheet" type="text/css" href="../reset.css">
+  <link rel="stylesheet" type="text/css" href="../global.css">
+  <link type="text/css" rel="stylesheet" href="coordination.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
-  <script src="animations.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .intro {
+      opacity: 0;
+    }
+  </style>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+          "TrackballControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/TrackballControls.js",
+          "GLTFLoader": "https://unpkg.com/three@0.138.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+    </script>
 </head>
 
 <body>
   <header>
-    <div class="hoverEffects">
-      <lottie-player
-        src="./images/animated-logo-header.json"
-        style="width: 203px; height: 40px;"
-      ></lottie-player>
-    </div>
-
-    <svg class="menu-icon" role="img" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-      <title>menu icon</title>
-      <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    </svg>
-    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24px" height="24px">
-      <title>close menu icon</title>
-      <path fill="currentColor"
-        d="M51.092 15.737L48.263 12.908 32 29.172 15.737 12.908 12.908 15.737 29.172 32 12.908 48.263 15.737 51.092 32 34.828 48.263 51.092 51.092 48.263 34.828 32z" />
-    </svg>
+    <a href="/" class="hoverEffects">
+      <img src="/assets/gitcoin-logo.svg" alt="gitcoin logo" width="100" height="20">
+    </a>
   </header>
 
-  <!-- hero -->
-  <div class="img-sequence-container hero-section">
-    <canvas id="hero" class="hero-img" width="329" height="329"></canvas>
-    <div class="hero-content">
-      <h1 class="gradient-text">Our purpose is to cultivate a more regenerative digital frontier</h1>
-      <button id="signup-btn" class="cta-btn">Stay up to date</button>
-    </div>
-  </div>
+  <section class="loading">
+    <lottie-player src="./assets/loading.json" background="transparent" style="width: 270px; height: 270px" loop
+      autoplay></lottie-player>
 
-  <!-- video -->
-  <section>
-    <h2>
-      <span class="gradient-text">what is</span><br/>
-      <span class="h2-sm gradient-text">supermodular?</span>
-    </h2>
-    <div class="video-container">
-      <iframe width="1024" height="576" src="https://www.youtube.com/embed/3BQKOY5Z36U?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="progress-container">
+      <div class="progress-percent"></div>
     </div>
   </section>
 
-  <!-- projects -->
-  <section class="projects">
-    <h2 class="gradient-text nopad">cohort 1</h2>
-    <h2 class="gradient-text sub">(2019 - 2021)</h2>
-    <div class="projects-container">
-      <a href="https://gitcoin.co/" target="_blank" class="project-container hover-container">
-        <div class="project-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
-            <g fill-rule="evenodd">
-              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
-              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
-              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
-              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
-            </g>
-            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
-          </svg>
-          <img class="project-logo" src="./images/gitcoin.svg" alt="gitcoin project" width="80" height="80" />
-        </div>
-        <div class="project-info">
-          <h3 class="hover-gradient-text">Gitcoin</h3>
-          <p class="project-description">
-            Gitcoin is a protocolDAO/impactDAO that builds Grants Stack, a Quadratic Funding crowdfunding protocol that has been used to fund 1000s of projects with over $72 million in total funding. 
-          </p>
-        </div>
-      </a>
-
-      <a href="https://www.kernel.community/en/" target="_blank" class="project-container hover-container">
-        <div class="project-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
-            <g fill-rule="evenodd">
-              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
-              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
-              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
-              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
-            </g>
-            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
-          </svg>
-          <img class="project-logo" src="./images/kernel.svg" alt="kernel project" width="80" height="80" />
-        </div>
-        <div class="project-info">
-          <h3 class="hover-gradient-text">Kernel</h3>
-          <p class="project-description">
-            KERNEL is an open, peer-to-peer, lifelong network of awesome humans, one block at a time. Each block accommodates 250 individuals and runs for 8 weeks. It is a unique experience.
-
-
-          </p>
-        </div>
-      </a>
-
-      <a href="https://buidlbox.io/" target="_blank" class="project-container hover-container">
-        <div class="project-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
-            <g fill-rule="evenodd">
-              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
-              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
-              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
-              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
-            </g>
-            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
-          </svg>
-          <img class="project-logo" src="./images/buidlbox.svg" alt="Buidlbox project" width="80" height="80" />
-        </div>
-        <div class="project-info">
-          <h3 class="hover-gradient-text">Buidlbox</h3>
-          <p class="project-description">
-            Host, co-sponsor and participate in hackathons. buidlbox is an end-to-end hackathons platform enabling buidlers and guidls with everything needed to gain novel skills, earn prizes, grow communities, and buidl a better web together.
-          </p>
-        </div>
-      </a>
-
-      <a href="https://greenpill.party/" target="_blank" class="project-container hover-container">
-        <div class="project-card">
-          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 154 154" width="154" height="154" fill="none" xmlns:v="https://vecta.io/nano">
-            <g fill-rule="evenodd">
-              <path class="card-corners corner-3" d="M117 154c0-20.448 16.552-37 37-37v18.85c-10.038 0-18.15 8.112-18.15 18.15H117z" fill="url(#A)"/>
-              <path class="card-corners corner-1" d="M37 0c0 20.448-16.551 37-37 37V18.15c10.038 0 18.15-8.112 18.15-18.15H37z" fill="url(#B)"/>
-              <path class="card-corners corner-4" d="M0 117c20.448 0 37 16.552 37 37H18.15c0-10.038-8.112-18.15-18.15-18.15V117z" fill="url(#C)"/>
-              <path class="card-corners corner-2" d="M154 37c-20.448 0-37-16.551-37-37h18.85c0 10.038 8.112 18.15 18.15 18.15V37z" fill="url(#D)"/>
-            </g>
-            <defs><linearGradient id="A" x1="123.652" y1="154" x2="151.455" y2="120.636" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="B" x1="30.348" y1="0" x2="2.545" y2="33.364" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="C" x1="0" y1="123.652" x2="33.364" y2="151.455" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient><linearGradient id="D" x1="154" y1="30.348" x2="120.636" y2="2.545" gradientUnits="userSpaceOnUse"><stop offset=".018" stop-color="#5784f7"/><stop offset=".859" stop-color="#08ffc4"/></linearGradient></defs>
-          </svg>
-          <img class="project-logo" src="./images/greenpill.svg" alt="greenpill project" width="80" height="80" />
-        </div>
-        <div class="project-info">
-          <h3 class="hover-gradient-text">GreenPill</h3>
-          <p class="project-description">
-            We are building a movement towards a more regenerative cryptoeconomics movement.  GreenPill is a community with a headless brand, which produces memes, podcasts, books that explore the frontier of how crypto can be pro-social and pro-humanity.
-          </p>
-        </div>
-      </a>
+  <section class="intro">
+    <div>
+      <h1>Coordination Mechanisms</h1>
+      <p>It's all coordination & it always has been. Now that we can program our values into our money, that will deepen
+        our ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination
+        mechanism design space below.
+        <br><br>
+        Built <a class="main-link"
+          href="https://medium.com/giveth/coordination-mechanisms-notes-from-a-conversation-with-griff-green-kevin-owocki-af95f3e831b1">with
+          &lt;3</a> by <a class="main-link" href="https://mobile.twitter.com/thegrifft">Griff Green</a>, <a
+          class="main-link" href="https://mobile.twitter.com/Sugasugsong">Dr. Suga</a>, <a class="main-link"
+          href="https://mobile.twitter.com/carl_cervone">Carl</a>, <a class="main-link"
+          href="https://twitter.com/CristinaLare">LareCristina</a>, <a class="main-link"
+          href="https://mobile.twitter.com/owocki">Owocki</a>, and <a class="main-link"
+          href="https://mobile.twitter.com/octanaiv">Octavian</a>.
+      </p>
     </div>
+    <div class="intro_meshes">
+      <div class="intro_mesh-container hover-container">
+        <div class="intro_mesh"></div>
+        <h4 class="hover-text text-orange">Ancient Mechanisms</h4>
+      </div>
+      <div class="intro_mesh-container hover-container">
+        <div class="intro_mesh"></div>
+        <h4 class="hover-text text-yellow">Web2 Mechanisms</h4>
+      </div>
+      <div class="intro_mesh-container hover-container">
+        <div class="intro_mesh"></div>
+        <h4 class="hover-text text-blue">Web3 Mechanisms</h4>
+      </div>
+    </div>
+    <button class="intro-btn">
+      <svg width="42" height="24" viewBox="0 0 42 24" fill="none" stroke="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M39.9454 1.94544L21 20.8909L2.05456 1.94544" stroke-width="3" />
+      </svg>
+    </button>
   </section>
 
-  <!-- roadmap -->
-  <section>
-    <h2 class="gradient-text nopad">cohort 2</h2>
-    <h2 class="gradient-text sub">(Seedlings 🌱 | 2022+)</h2>
-    <div class="roadmap-container">
+  <section class="mechanisms-container"></section>
 
-      <a href="https://metacrisisdao.com/" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">MetacrisisDAO.com</h3>
-      </a>
-
-      <a href="https://pluriverse.wtf/" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">Pluriverse.WTF</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/sip-cohort-2-opportunity-2-quadratic-funding-social-network/94/" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF Social Network (Lense)</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/sip-cohort-2-opportunity-2-quadratic-funding-social-network/94/" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF Social Network (Discord)</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/qf-flash-game/245/2" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF Mobile Game</h3>
-      </a>
-
-      <a href="#" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF Card Game</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/sip-cohort-2-opportunity-3-web2-5-simplegrants-platform/95" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF/Grants For Non-EVM Ecosystems</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/partnership-tool-on-grants-stack/261" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">QF Partnership Finder</h3>
-      </a>
-
-
-
-      <a href="https://hypercerts.xyz/" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">Hypercerts.xyz</h3>
-      </a>
-
-      <a href="https://community.supermodular.xyz/t/sip-cohort-2-opportunity-4-hypercerts-xyz/99/2" target="_blank" class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">Gratitude.party</h3>
-      </a>
-
-      <div class="roadmap-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewbox="0 0 30 60" fill="none" xmlns:v="https://vecta.io/nano">
-          <g fill-rule="evenodd">
-            <path class="roadmap-icon-top" d="M15.284 8c0 8.139 6.578 14.717 14.717 14.717V38A29.99 29.99 0 0 1 0 8h15.284z" fill="url(#A)"/>
-            <path class="roadmap-icon-bottom" d="M0 53a29.99 29.99 0 0 1 30-30v15.283c-8.139 0-14.716 6.578-14.716 14.717H0z" fill="url(#B)"/>
-          </g>
-          <defs><linearGradient id="A" x1="1.802" y1="7.936" x2="18.69" y2="30.403" gradientUnits="userSpaceOnUse"><stop stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient><linearGradient id="B" x1="30" y1="30.457" x2="1.573" y2="51.701" gradientUnits="userSpaceOnUse"><stop offset=".126" stop-color="#08ffc4"/><stop offset="1" stop-color="#5784f7"/></linearGradient></defs>
-        </svg>
-      <a href="https://community.supermodular.xyz/t/2023-roadmap-early-preview-supermodular-incubation-program-sips/106" target="_blank" class="roadmap-card hover-container">
-        <h3 class="hover-gradient-text">[View the 2023 Roadmap]</h3>
-      </a>
+  <!-- modal -->
+  <section class="overlay">
+    <svg role="img" class="modal-close" width="30px" height="30px" viewbox="0 0 50 50"
+      enable-background="new 0 0 50 50">
+      <title>close modal icon</title>
+      <path fill="currentColor" d="M9.016,40.837c0.195,0.195,0.451,0.292,0.707,0.292c0.256,0,0.512-0.098,0.708-0.293l14.292-14.309
+            l14.292,14.309c0.195,0.196,0.451,0.293,0.708,0.293c0.256,0,0.512-0.098,0.707-0.292c0.391-0.39,0.391-1.023,0.001-1.414
+            L26.153,25.129L40.43,10.836c0.39-0.391,0.39-1.024-0.001-1.414c-0.392-0.391-1.024-0.391-1.414,0.001L24.722,23.732L10.43,9.423
+            c-0.391-0.391-1.024-0.391-1.414-0.001c-0.391,0.39-0.391,1.023-0.001,1.414l14.276,14.293L9.015,39.423
+            C8.625,39.813,8.625,40.447,9.016,40.837z" />
+    </svg>
+    <div class="mechanism-box">
+      <div>
+        <div class="mechanism-box_title gradient-text"></div>
+        <div class="mechanism-box_description"></div>
+      </div>
+      <div class="mechanism-box_link hover-container">
+        <div class="mechanism-box_mesh"></div>
+        <div class="mechanism-box_more hover-text">[more info]</div>
       </div>
     </div>
   </section>
 
-  <!-- footer -->
   <footer>
-    <h2 class="gradient-text">get in touch</h2>
-    <div class="footer-container">
-      <!-- <a href="https://community.supermodular.xyz/" class="footer-card hover-container hoverEffects">
-        <div>
-          <lottie-player
-            src="./images/super-modular-logo-animated.json"
-            style="width: 36px; height: 35px;"
-          ></lottie-player>
-        </div>
-        <h3 class="hover-gradient-text">community forum</h3>
-      </a> -->
-
-      <a href="mailto:team@supermodular.xyz" class="footer-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="37" height="26" fill="none" xmlns:v="https://vecta.io/nano">
-          <path fill="url(#A)" d="M0 0h36.706v26H0z"/><path d="M18.353 17.588L0 0h36.706L18.353 17.588z" fill="#041e42"/>
-          <path class="mail-icon-top" d="M18.353 10.706L0 0h36.706L18.353 10.706z" fill="url(#B)"/>
-          <defs><linearGradient id="A" x1="33.379" y1="24.543" x2="10.36" y2="-5.042" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient><linearGradient id="B" x1="3.327" y1=".6" x2="9.009" y2="18.337" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">team@supermodular.xyz</h3>
-      </a>
-
-      <a href="https://store.supermodular.xyz/" class="footer-card hover-container hoverEffects">
-        <div>
-          <lottie-player
-            src="./images/super-modular-logo-animated.json"
-            style="width: 36px; height: 35px;"
-          ></lottie-player>
-        </div>
-        <h3 class="hover-gradient-text">store</h3>
-      </a>
-
-      <a href="https://twitter.com/supermodularxyz" class="footer-card hover-container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="26" fill="none" xmlns:v="https://vecta.io/nano">
-          <path class="twitter-icon" d="M32.28 3.068a13.41 13.41 0 0 1-3.804 1.041A6.7 6.7 0 0 0 31.401.467a13 13 0 0 1-4.217 1.597C25.982.79 24.26 0 22.358 0c-3.661 0-6.621 2.943-6.621 6.567a6.08 6.08 0 0 0 .179 1.507C10.407 7.805 5.527 5.186 2.261 1.202c-.574.969-.897 2.099-.897 3.302 0 2.279 1.166 4.288 2.943 5.473-1.095-.036-2.117-.341-2.997-.825v.072c0 3.194 2.279 5.832 5.311 6.442-.556.143-1.13.233-1.741.233-.431 0-.843-.054-1.256-.126.843 2.602 3.284 4.504 6.19 4.558a13.4 13.4 0 0 1-8.236 2.817c-.538 0-1.059-.036-1.579-.09C2.943 24.923 6.424 26 10.156 26 22.34 26 29.015 15.988 29.015 7.303c0-.287 0-.574-.018-.843 1.31-.915 2.422-2.081 3.302-3.409" fill="url(#A)"/>
-          <defs><linearGradient id="A" x1="29.371" y1="24.543" x2="5.802" y2="-2.111" gradientUnits="userSpaceOnUse"><stop offset=".265" stop-color="#08ffb8"/><stop offset="1" stop-color="#5799f7"/></linearGradient></defs>
-        </svg>
-        <h3 class="hover-gradient-text">@supermodularxyz</h3>
-      </a>
-
+    <p>Got a coordination mechanism we should add to this list? Submit it below.</p>
+    <div class="hover-container footer-card">
+      <a class="hover-text" href="https://forms.gle/fyRmvMjLnvWkA5F39" target="_blank">Submit new coordination
+        mechanism</a>
     </div>
   </footer>
 
-  <div class="overlay hidden">
-    <div class="modal signup-modal hidden" id="mc_embed_signup">
-      <form action="https://xyz.us18.list-manage.com/subscribe/post?u=440d93cdf1197d43be6f8a47d&amp;id=23686c1b3e&amp;f_id=005b20e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-          <h2 class="gradient-text">Subscribe for updates</h2>
-          <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-            </label>
-            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-            <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-          </div>
-          <div class="mc-field-group input-group">
-            <strong>User Type </strong>
-            <ul>
-              <li>
-                <input type="radio" value="1" name="group[214916]" id="mce-group[214916]-214916-0">
-                <label for="mce-group[214916]-214916-0">Buidler</label>
-              </li>
-              <li>
-                  <input type="radio" value="2" name="group[214916]" id="mce-group[214916]-214916-1">
-                  <label for="mce-group[214916]-214916-1">Organization</label>
-              </li>
-            </ul>
-            <span id="mce-group[214916]-HELPERTEXT" class="helper_text"></span>
-          </div>
-          <div class="mc-field-group input-group" style="display: none;">
-              <strong>Source </strong>
-              <ul>
-                <li>
-                  <input type="radio" value="4" name="group[214920]" id="mce-group[214920]-214920-0">
-                  <label for="mce-group[214920]-214920-0">buidlbox.io</label>
-                </li>
-                <li>
-                    <input type="radio" value="8" name="group[214920]" id="mce-group[214920]-214920-1" checked>
-                    <label for="mce-group[214920]-214920-1">supermodular.xyz</label>
-                </li>
-              </ul>
-              <span id="mce-group[214920]-HELPERTEXT" class="helper_text"></span>
-          </div>
-          <div hidden="true"><input type="hidden" name="tags" value="2200324"></div>
-          <div id="mce-responses" class="clear">
-              <div class="response" id="mce-error-response" style="display:none"></div>
-              <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_440d93cdf1197d43be6f8a47d_23686c1b3e" tabindex="-1" value=""></div>
-          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-        </div>
-      </form>
-    </div>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-  </div>
-
-  <!-- menu -->
-  <div class="menu-overlay hidden">
-    <div class="modal menu-modal hidden">
-      <div class="menu">
-        <div class="menu-inner">
-          <ul>
-            <div>
-              <h3>Education</h3>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item selected">Greenpill</h4>
-              </li>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item">Coordination Mech</h4>
-              </li>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item">Crypto OG Book</h4>
-              </li>
-            </div>
-            <div>
-              <h3>Modules</h3>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item">Gitcoin</h4>
-              </li>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item">Kernel</h4>
-              </li>
-              <li class="hover-container">
-                <h4 class="hover-gradient-text menu-item">Buidlbox</h4>
-              </li>
-            </div>
-          </ul>
-          <div class="menu-divider"></div>
-          <div class="menu-divider-mobile"></div>
-          <div class="menu-project first">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Greenpill</h3>
-              <p>We explore the intersection of programmable money, game theory, and mechanism design. We search for powerful
-                new ways to to fund, design, develop, and market regenerative web3 era applications and digital assets. We
-                launch the meme of regenerative crypto economics into the world.</p>
-              <a href="https://greenpill.party/" target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/greenpill-menu.svg" width="270" height="270" alt="greenpill" />
-          </div>
-          <div class="menu-project">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Coordination<br />
-                Mechanisms</h3>
-              <p>It's all coordination & it always has been. Now that we can program our values into our money, that will
-                deepen our
-                ability to coordinate at webscale. So what do we build with it? Explore what's possible in the coordination
-                mechanism
-                design space below.</p>
-              <a href="/coordination-mechanisms" target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/coord-mech.svg" width="216" height="247" alt="coordination mechanisms" />
-          </div>
-          <div class="menu-project">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Stuff Only<br />
-                Crypto OG Know</h3>
-              <p>First cycle you was a tourist. YOU chased the pump. Bought the Pico Top. Didn’t self custody. You have bags.
-                so many
-                bags. First cycle you is NGMI. Multi cycle you played the long game. Rode the waves. Stayed hungry, stayed
-                humble, did
-                the work. Multi cycle you knows wagmi.
-                This tome of “stuff crypto ogs know” is your guide to being a multi-cycle crypto citizen.</p>
-              <a href="https://store.supermodular.xyz/products/stuff-crypto-ogs-know-book-digital?pr_prod_strat=use_description&pr_rec_id=dce751293&pr_rec_pid=8133680628014&pr_ref_pid=8133684199726&pr_seq=uniform"
-                target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/crypto-og.svg" width="202" height="250" alt="book Stuff Only Crypto OG Know" />
-          </div>
-      
-          <div class="menu-project">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Gitcoin</h3>
-              <p>web3 technology like open source protocols and decentralized blockchains give us the ability to take
-                co-creation to a
-                new scale. The Gitcoin ecosystem uses this technology to fund and build digital public goods projects that
-                serve
-                everyone, and solve our most immediate problems.</p>
-              <a href="https://www.gitcoin.co/" target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/gitcoin.svg" width="125" height="150" alt="gitcoin" />
-          </div>
-          <div class="menu-project">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Kernel</h3>
-              <p>Kernel is a peer-to-peer learning community dedicated to the journey towards a better understanding of truth:
-                in our
-                work, in our relationships with others, and in our inner worlds</p>
-              <a href="https://www.kernel.community/en/" target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/kernel.svg" width="150" height="150" alt="kernel" />
-          </div>
-          <div class="menu-project">
-            <div class="menu-project-content">
-              <h3 class="gradient-text">Buidlbox</h3>
-              <p>Host, co-sponsor and participate in hackathons. buidlbox is an end-to-end hackathons platform enabling
-                buidlers and
-                guidls with everything needed to gain novel skills, earn prizes, grow communities, and buidl a better web
-                together.</p>
-              <a href="https://buidlbox.io/" target="_blank"><button class="cta-btn">Find out more</button></a>
-            </div>
-            <img src="./images/menu/buidlbox.svg" width="150" height="150" alt="buidlbox" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
-  <script src="script.js"></script>
-  <script src="lottieHover.js"></script>
+  <script src="../lottieHover.js"></script>
+  <script type="module" src="coordination.js"></script>
+
 </body>
+
 </html>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYS99VZ404"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-EYS99VZ404');

@@ -1,11 +1,8 @@
 body {
   box-sizing: border-box;
-  background: url('./assets/coord-bg.svg') #002E4B;
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  background-position: top;
-  color: #FFFFFF;
-  font-family: Inter;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  font-family: 'PT Serif', serif;
   font-weight: 400;
   font-size: 1rem;
   margin: 0;
@@ -24,15 +21,6 @@ body {
   }
 }
 
-/* global file colors */
-:root {
-  --color-dark: #041e42;
-  --color-blue: #5784F7;
-  --color-green: #3CDBC0;
-  --gradient: linear-gradient(312.31deg, #08FFB8 30.49%, #5799F7 94.47%);
-  --gradient-reverted: linear-gradient(312.31deg, #5799F7 30.49%, #08FFB8 94.47%);
-  accent-color: var(--color-green);
-}
 
 html {
   scroll-behavior: smooth;
@@ -46,7 +34,7 @@ html {
   border-radius: 5px;
 }
 .overlay ::-webkit-scrollbar-thumb {
-  background: var(--gradient);
+  background: var(--color-orange);
   border-radius: 5px;
 }
 .overlay ::-webkit-scrollbar-thumb:hover {
@@ -87,7 +75,7 @@ header {
 .loading {
   width: 100%;
   height: 101vh;
-  background: #002E4B;
+  background: var(--color-white);
   position: absolute;
   top: 0;
   left: 0;
@@ -103,9 +91,9 @@ header {
 
 .progress-container {
   height: 9px;
-  color: white;
+  color: var(--color-dark);
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid var(--color-dark);
   width: 200px;
   position: relative;
   text-align: center;
@@ -115,7 +103,7 @@ header {
 .progress-percent {
   border-radius: inherit;
   position: absolute;
-  background: var(--gradient);
+  background: var(--color-purple);
   width: 0;
   transition: all 0.4s ease-out;
   top: 0;
@@ -140,10 +128,11 @@ header {
 }
 
 .intro h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 106.52%;
   padding-bottom: 1.25rem;
   max-width: 10ch;
+  color: #000000;
 }
 
 .intro h4 {
@@ -153,7 +142,7 @@ header {
  
 .intro p {
   line-height: 1.4;
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
 .intro_meshes {
@@ -223,7 +212,7 @@ header {
   background-color: transparent;
   cursor: pointer;
   border: none;
-  color: white;
+  color: var(--color-dark);
   height: 55px;
   display: flex;
   padding: 15px;
@@ -233,7 +222,7 @@ header {
   transition: all 0.3s ease-out;
 }
 .intro-btn:hover svg {
-  color: var(--color-green);
+  color: var(--color-purple);
   transform: translateY(8px);
 }
 
@@ -385,7 +374,7 @@ canvas {
   display: none;
   transition: all 0.4s ease-out;
   opacity: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(250, 247, 243, 0.80);
 }
 
 .large-mesh {
