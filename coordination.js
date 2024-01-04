@@ -40,6 +40,10 @@ const handle3dClick = (element, fn) => {
   };
 };
 
+const getMechColor = (type) => {
+  return type === 'web1' ? 0xAF5E42 : type === 'web2' ? 0xAE9F49 : 0x3180A9;
+}
+
 const getMechType = (type) => {
   return type === 0 ? 'web1' : type === 1 ? 'web2' : 'web3'; 
 };
@@ -195,7 +199,7 @@ function main() {
         if (o.isMesh) {
           const x = !i ? Math.random() * 0.7 : i % 3 == 0 ? 0.1 : i % 3 === 1 ? 0.7 : 0.4;
           o.material.metalness = x;
-
+          o.material.color.set( getMechColor(mechType) );
           if (i && mechType == 'web3') {
             let geometry;
             if (i % 4 === 0) geometry = new THREE.OctahedronGeometry( 3, 0 );
@@ -224,13 +228,14 @@ function main() {
    	      const wireframe = new THREE.LineSegments( wireframeGeometry, wireframeMaterial );
           wireframe.material.opacity = i % 4 == 0 ? 0.85 : i % 3 == 1 ? 0.3 : i % 4 == 3 ? 0.15 : 0.5;
           wireframe.material.transparent = true;
+          
           o.add( wireframe );
         }
       });
       scene.add(gltf.scene);
       mesh.scale.set(0.2, 0.2, 0.2);
 
-      count ++;
+      count++;
       if (disabledScroll && count === minLoadedMeshes) {
         loadingSection.style.opacity = '0';
         introSection.style.opacity = '1';
@@ -310,6 +315,7 @@ function main() {
     }, 5);
 
     mechanismBoxTitle.textContent = element.title;
+    mechanismBoxTitle.classList.add(`${element.type === 0 ? 'text-orange' : element.type === 1 ? 'text-yellow' : 'text-blue'}`);
     mechanismBoxDescription.textContent = element.description;
     if (!element.link) {
       mechanismBoxMore.style.display = 'none';
@@ -395,7 +401,7 @@ function main() {
 
       const title = document.createElement('p');
       title.textContent = element.title;
-      title.className = 'mechanism-title hover-gradient-text';
+      title.className = `mechanism-title ${element.type === 0 ? 'text-orange' : element.type === 1 ? 'text-yellow' : 'text-blue'}`;
 
       mechContainer.appendChild(meshContainer);
       mechContainer.appendChild(title);
