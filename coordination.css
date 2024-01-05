@@ -144,6 +144,10 @@ header {
   line-height: 1.4;
   max-width: 60ch;
 }
+.intro p .main-link {
+  font-size: 100%;
+  line-height: 1.4;
+}
 
 .intro_meshes {
   display: flex;

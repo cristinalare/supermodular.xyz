@@ -60,7 +60,8 @@ const getBgSvg = (elementType) => {
       'http://www.w3.org/2000/svg',
       'rect'
     );
-    rect.setAttribute('fill', '#014875');
+    // 
+    rect.setAttribute('fill', '#d0e2e2');
     rect.setAttribute('rx', '68');
     rect.setAttribute('width', '136');
     rect.setAttribute('height', '136');
@@ -73,7 +74,7 @@ const getBgSvg = (elementType) => {
       'http://www.w3.org/2000/svg',
       'rect'
     );
-    rect.setAttribute('fill', '#014875');
+    rect.setAttribute('fill', '#d0e2e2');
     rect.setAttribute('transform', 'rotate(45 94 0)');
     rect.setAttribute('x', '94');
     rect.setAttribute('width', '132');
@@ -88,7 +89,7 @@ const getBgSvg = (elementType) => {
       'path'
     );
     iconPath.setAttribute('d', "M72.5 0L144.813 41.75V125.25L72.5 167L0.186882 125.25V41.75L72.5 0Z");
-    iconPath.setAttribute('fill', '#014875');
+    iconPath.setAttribute('fill', '#d0e2e2');
     svg.appendChild(iconPath);
   }
   return svg;
